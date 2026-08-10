@@ -1,0 +1,185 @@
+{
+  "voz": "es-DO-RamonaNeural",
+  "velocidad": "-18%",
+  "fragmentos": [
+    "Hola, vamos a leer.",
+    "Toca la",
+    "Otra vez, busca la",
+    "¿Cuál empieza con",
+    "Arma la palabra",
+    "¡Sí!",
+    "Eso es",
+    "Busca",
+    "Revienta las burbujas que dicen",
+    "¡Muy bien!",
+    "¡Excelente!",
+    "¡Lo lograste!",
+    "¡Qué inteligente!",
+    "¡Perfecto!",
+    "¡Wow, qué bien!",
+    "¡Casi! Escucha otra vez.",
+    "¡Adivinaste!",
+    "¡Bravo!",
+    "¡Lo hiciste muy bien! Ganaste un trofeo.",
+    "¡Escuchaste muy bien!",
+    "¡Muy buena lectura!",
+    "¡Adivinaste todas!",
+    "a, e, i, o, u"
+  ],
+  "lecciones": [
+    {
+      "n": 1,
+      "titulo": "Las vocales",
+      "letra": "a e i o u",
+      "color": "#FF3F87",
+      "trofeo": "🌈",
+      "juego": "escucha",
+      "vocales": [
+        {"l": "a", "w": "abeja", "e": "🐝"},
+        {"l": "e", "w": "elefante", "e": "🐘"},
+        {"l": "i", "w": "iglú", "e": "🧊"},
+        {"l": "o", "w": "oso", "e": "🐻"},
+        {"l": "u", "w": "uvas", "e": "🍇"}
+      ],
+      "palabras": [
+        {"w": "abeja", "e": "🐝", "s": "a-be-ja"},
+        {"w": "elefante", "e": "🐘", "s": "e-le-fan-te"},
+        {"w": "iglú", "e": "🧊", "s": "i-glú"},
+        {"w": "oso", "e": "🐻", "s": "o-so"},
+        {"w": "uvas", "e": "🍇", "s": "u-vas"}
+      ],
+      "frases": ["El oso come uvas.", "La abeja va a la loma."],
+      "adivinanzas": [
+        {"texto": "Vuela, hace miel y empiezo con la vocal a. ¿Quién soy?", "resp": "🐝", "opciones": ["🐝", "🐻", "🍇"]},
+        {"texto": "Soy muy grande, tengo trompa y empiezo con la vocal e. ¿Quién soy?", "resp": "🐘", "opciones": ["🐘", "🧊", "🐝"]},
+        {"texto": "Soy una casa de hielo y empiezo con la vocal i. ¿Qué soy?", "resp": "🧊", "opciones": ["🧊", "🐘", "🐻"]}
+      ]
+    },
+    {
+      "n": 2,
+      "titulo": "La m de mamá",
+      "letra": "m",
+      "color": "#FF8A24",
+      "trofeo": "💗",
+      "juego": "burbujas",
+      "silabas": ["ma", "me", "mi", "mo", "mu"],
+      "palabras": [
+        {"w": "mamá", "e": "👩", "s": "ma-má"},
+        {"w": "mimo", "e": "🤗", "s": "mi-mo"},
+        {"w": "mula", "e": "🐴", "s": "mu-la"},
+        {"w": "momia", "e": "🧟", "s": "mo-mia"}
+      ],
+      "frases": ["Mi mamá me ama.", "Amo a mi mamá.", "Mi mamá me mima."],
+      "adivinanzas": [
+        {"texto": "Me cuida, me abraza y me da besos. Empiezo con ma. ¿Quién soy?", "resp": "👩", "opciones": ["👩", "🐴", "🤗"]},
+        {"texto": "Soy un animal que carga cosas y empiezo con mu. ¿Quién soy?", "resp": "🐴", "opciones": ["🐴", "👩", "🧟"]},
+        {"texto": "Soy un abrazo cariñoso y empiezo con mi. ¿Qué soy?", "resp": "🤗", "opciones": ["🤗", "🧟", "🐴"]}
+      ]
+    },
+    {
+      "n": 3,
+      "titulo": "La p de papá",
+      "letra": "p",
+      "color": "#12B3C4",
+      "trofeo": "⭐",
+      "juego": "imagen",
+      "silabas": ["pa", "pe", "pi", "po", "pu"],
+      "palabras": [
+        {"w": "papá", "e": "👨", "s": "pa-pá"},
+        {"w": "Pepe", "e": "🧒", "s": "Pe-pe"},
+        {"w": "puma", "e": "🐆", "s": "pu-ma"},
+        {"w": "mapa", "e": "🗺️", "s": "ma-pa"}
+      ],
+      "frases": ["Mi papá me mima.", "Amo a papá.", "Mimo a mamá, amo a papá."],
+      "adivinanzas": [
+        {"texto": "Soy un gato grande de la montaña y empiezo con pu. ¿Quién soy?", "resp": "🐆", "opciones": ["🐆", "🗺️", "👨"]},
+        {"texto": "Te llevo de la mano y empiezo con pa. ¿Quién soy?", "resp": "👨", "opciones": ["👨", "🧒", "🐆"]},
+        {"texto": "Sirvo para no perderse en el camino. Termino en pa. ¿Qué soy?", "resp": "🗺️", "opciones": ["🗺️", "👨", "🧒"]}
+      ]
+    },
+    {
+      "n": 4,
+      "titulo": "La l de loma",
+      "letra": "l",
+      "color": "#38A85C",
+      "trofeo": "🌻",
+      "juego": "imagen",
+      "silabas": ["la", "le", "li", "lo", "lu"],
+      "palabras": [
+        {"w": "loma", "e": "⛰️", "s": "lo-ma"},
+        {"w": "lima", "e": "🍋", "s": "li-ma"},
+        {"w": "paloma", "e": "🕊️", "s": "pa-lo-ma"},
+        {"w": "luna", "e": "🌙", "s": "lu-na"}
+      ],
+      "frases": ["Mi mula sale sola.", "La paloma pule la lima."],
+      "adivinanzas": [
+        {"texto": "Soy amarilla, ácida y empiezo con li. ¿Qué soy?", "resp": "🍋", "opciones": ["🍋", "🕊️", "⛰️"]},
+        {"texto": "Soy blanca, vuelo y llevo la paz. ¿Quién soy?", "resp": "🕊️", "opciones": ["🕊️", "🌙", "🍋"]},
+        {"texto": "Salgo de noche en el cielo y empiezo con lu. ¿Quién soy?", "resp": "🌙", "opciones": ["🌙", "⛰️", "🕊️"]}
+      ]
+    },
+    {
+      "n": 5,
+      "titulo": "La n de nene",
+      "letra": "n",
+      "color": "#8A5CF0",
+      "trofeo": "🌟",
+      "juego": "burbujas",
+      "silabas": ["na", "ne", "ni", "no", "nu"],
+      "palabras": [
+        {"w": "nene", "e": "👶", "s": "ne-ne"},
+        {"w": "mano", "e": "✋", "s": "ma-no"},
+        {"w": "mono", "e": "🐒", "s": "mo-no"},
+        {"w": "pino", "e": "🌲", "s": "pi-no"}
+      ],
+      "frases": ["Esa nena me anima.", "La mona lame mi mano.", "Mi mamá mima a su nene."],
+      "adivinanzas": [
+        {"texto": "Soy un bebé chiquito y empiezo con ne. ¿Quién soy?", "resp": "👶", "opciones": ["👶", "🐒", "🌲"]},
+        {"texto": "Trepo árboles, como guineo y termino en no. ¿Quién soy?", "resp": "🐒", "opciones": ["🐒", "✋", "👶"]},
+        {"texto": "Tengo cinco dedos y termino en no. ¿Qué soy?", "resp": "✋", "opciones": ["✋", "🌲", "🐒"]}
+      ]
+    },
+    {
+      "n": 6,
+      "titulo": "La t de tomate",
+      "letra": "t",
+      "color": "#FFC61A",
+      "trofeo": "🍅",
+      "juego": "arma",
+      "silabas": ["ta", "te", "ti", "to", "tu"],
+      "palabras": [
+        {"w": "pato", "e": "🦆", "s": "pa-to"},
+        {"w": "tomate", "e": "🍅", "s": "to-ma-te"},
+        {"w": "pelota", "e": "⚽", "s": "pe-lo-ta"},
+        {"w": "moto", "e": "🏍️", "s": "mo-to"}
+      ],
+      "frases": ["Mi nene toma su sopa.", "Su moto sí pita.", "Ese pato come tomate."],
+      "adivinanzas": [
+        {"texto": "Nado en el agua y digo cuac. Termino en to. ¿Quién soy?", "resp": "🦆", "opciones": ["🦆", "🍅", "⚽"]},
+        {"texto": "Soy rojo, redondo y voy en la ensalada. Empiezo con to. ¿Qué soy?", "resp": "🍅", "opciones": ["🍅", "🏍️", "🦆"]},
+        {"texto": "Ruedo, boto y sirvo para jugar. Termino en ta. ¿Qué soy?", "resp": "⚽", "opciones": ["⚽", "🦆", "🍅"]}
+      ]
+    },
+    {
+      "n": 7,
+      "titulo": "La d de dedo",
+      "letra": "d",
+      "color": "#FF3F87",
+      "trofeo": "🏆",
+      "juego": "arma",
+      "silabas": ["da", "de", "di", "do", "du"],
+      "palabras": [
+        {"w": "dedo", "e": "☝️", "s": "de-do"},
+        {"w": "dado", "e": "🎲", "s": "da-do"},
+        {"w": "moneda", "e": "🪙", "s": "mo-ne-da"},
+        {"w": "dulce", "e": "🍬", "s": "dul-ce"}
+      ],
+      "frases": ["La dama me anima.", "Mi dedo toca el dado."],
+      "adivinanzas": [
+        {"texto": "Tengo seis caras con puntos y sirvo para jugar. Empiezo con da. ¿Qué soy?", "resp": "🎲", "opciones": ["🎲", "🪙", "🍬"]},
+        {"texto": "Soy redonda, dorada y sirvo para comprar. ¿Qué soy?", "resp": "🪙", "opciones": ["🪙", "☝️", "🎲"]},
+        {"texto": "Soy dulce, sabroso y empiezo con du. ¿Qué soy?", "resp": "🍬", "opciones": ["🍬", "🎲", "🪙"]}
+      ]
+    }
+  ]
+}
