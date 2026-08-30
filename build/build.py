@@ -56,9 +56,14 @@ def recolectar(contenido):
             )
             for s in L["silabas"]:
                 clips["s:" + s] = s
-                # formación silábica: "m con a, ma." (método silábico explícito)
-                vocal = s[len(L["letra"]):] or s[-1]
-                clips["x:" + s] = "%s con %s, %s." % (L["letra"], vocal, s)
+                # formación silábica: "m con a, ma." (método silábico explícito).
+                # En las inversas el orden se invierte: "a con l, al."
+                if L.get("inversa"):
+                    vocal = s[: len(s) - len(L["letra"])]
+                    clips["x:" + s] = "%s con %s, %s." % (vocal, L["letra"], s)
+                else:
+                    vocal = s[len(L["letra"]):] or s[-1]
+                    clips["x:" + s] = "%s con %s, %s." % (L["letra"], vocal, s)
         for p in L["palabras"]:
             clips["p:" + p["w"]] = "%s... %s." % (silabas_habladas(p["s"]), p["w"])
             # cada sílaba de cada palabra, suelta, para el resaltado sincronizado

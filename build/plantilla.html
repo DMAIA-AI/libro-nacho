@@ -154,6 +154,8 @@
   .pieza.cons{color:var(--acento)}
   .pieza.voc{color:#fff; background:var(--tinta-suave); transition:transform .5s cubic-bezier(.2,.8,.3,1)}
   .pieza.voc.vuela{transform:translateX(-14px) scale(1.1)}
+  /* en las inversas la vocal va a la izquierda, así que viaja hacia la derecha */
+  .formador.inversa .pieza.voc.vuela{transform:translateX(14px) scale(1.1)}
   .pieza.res{color:#fff; background:var(--ok); opacity:0; transform:scale(.7);
              transition:opacity .3s, transform .35s cubic-bezier(.2,1.5,.4,1)}
   .pieza.res.viva{opacity:1; transform:scale(1)}
@@ -679,19 +681,35 @@
       /* Formador: enseña CÓMO nace la sílaba (m + a = ma). Es el corazón del
          método silábico. Antes la sílaba aparecía ya hecha, sin mostrar la
          síntesis, que es justo la operación que el niño tiene que aprender. */
-      var forma  = el("div","formador");
+      var forma  = el("div", L.inversa ? "formador inversa" : "formador");
       var cons   = el("b","pieza cons", L.letra);
       var voc    = el("b","pieza voc","a");
       var res    = el("b","pieza res", L.silabas[0]);
-      forma.appendChild(cons);
-      forma.appendChild(el("span","signo","+"));
-      forma.appendChild(voc);
+
+      /* En las sílabas inversas (al, es, ar...) la vocal va primero y la
+         consonante cierra. Se invierte el orden del formador para que la
+         animación muestre la síntesis real: a + l = al, no l + a. */
+      if(L.inversa){
+        forma.appendChild(voc);
+        forma.appendChild(el("span","signo","+"));
+        forma.appendChild(cons);
+      } else {
+        forma.appendChild(cons);
+        forma.appendChild(el("span","signo","+"));
+        forma.appendChild(voc);
+      }
       forma.appendChild(el("span","signo","="));
       forma.appendChild(res);
       t.appendChild(forma);
 
+      function vocalDe(s){
+        return L.inversa
+          ? s.slice(0, s.length - L.letra.length)
+          : s.slice(L.letra.length) || s.slice(-1);
+      }
+
       function formar(s){
-        voc.textContent = s.slice(L.letra.length) || s.slice(-1);
+        voc.textContent = vocalDe(s);
         res.textContent = s;
         voc.classList.remove("vuela"); res.classList.remove("viva");
         void voc.offsetWidth;                 // reinicia la animación
@@ -699,7 +717,7 @@
         setTimeout(function(){ res.classList.add("viva"); }, 480);
         hablar("x:" + s);
       }
-      voc.textContent = L.silabas[0].slice(L.letra.length) || L.silabas[0].slice(-1);
+      voc.textContent = vocalDe(L.silabas[0]);
 
       var r2 = el("div","fila"); r2.style.marginTop = "18px";
       L.silabas.forEach(function(s,i){

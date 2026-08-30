@@ -579,6 +579,433 @@
         {"texto": "Soy una flor amarilla que mira al sol. Empiezo con gi. ¿Qué soy?", "resp": "🌻", "opciones": ["🌻", "👯", "💎"]},
         {"texto": "Me pasas cuando lees un libro. Tengo gi. ¿Qué soy?", "resp": "📄", "opciones": ["📄", "💎", "🌻"]}
       ]
+    },
+    {
+      "n": 27,
+      "titulo": "Sílabas con s: as, es, is",
+      "letra": "s",
+      "inversa": true,
+      "color": "#12B3C4",
+      "trofeo": "🏝️",
+      "juego": "escucha",
+      "silabas": ["as", "es", "is", "os", "us"],
+      "palabras": [
+        {"w": "isla", "e": "🏝️", "s": "is-la"},
+        {"w": "escoba", "e": "🧹", "s": "es-co-ba"},
+        {"w": "castillo", "e": "🏰", "s": "cas-ti-llo"},
+        {"w": "mosca", "e": "🪰", "s": "mos-ca"}
+      ],
+      "frases": ["Me asusta esa máscara.", "Este pescado está rico.", "Sigue la pista y busca la costa."],
+      "adivinanzas": [
+        {"texto": "Soy tierra rodeada de agua por todos lados. Empiezo con is. ¿Qué soy?", "resp": "🏝️", "opciones": ["🏝️", "🧹", "🏰"]},
+        {"texto": "Barro el piso de la casa. Empiezo con es. ¿Qué soy?", "resp": "🧹", "opciones": ["🧹", "🪰", "🏝️"]},
+        {"texto": "Soy grande, de piedra, y ahí vive el rey. Tengo cas. ¿Qué soy?", "resp": "🏰", "opciones": ["🏰", "🏝️", "🧹"]}
+      ]
+    },
+    {
+      "n": 28,
+      "titulo": "Sílabas con n: an, en, in",
+      "letra": "n",
+      "inversa": true,
+      "color": "#38A85C",
+      "trofeo": "🍎",
+      "juego": "burbujas",
+      "silabas": ["an", "en", "in", "on", "un"],
+      "palabras": [
+        {"w": "manzana", "e": "🍎", "s": "man-za-na"},
+        {"w": "mundo", "e": "🌎", "s": "mun-do"},
+        {"w": "bandera", "e": "🚩", "s": "ban-de-ra"},
+        {"w": "naranja", "e": "🍊", "s": "na-ran-ja"}
+      ],
+      "frases": ["Tengo una manzana roja y jugosa.", "Ese capitán manda su batallón.", "Cinco gemas valen mucho."],
+      "adivinanzas": [
+        {"texto": "Soy roja, redonda y crujiente. Empiezo con man. ¿Qué soy?", "resp": "🍎", "opciones": ["🍎", "🌎", "🚩"]},
+        {"texto": "Soy redondo y en mí vivimos todos. Empiezo con mun. ¿Qué soy?", "resp": "🌎", "opciones": ["🌎", "🍊", "🍎"]},
+        {"texto": "Ondeo en el asta y tengo los colores del país. Empiezo con ban. ¿Qué soy?", "resp": "🚩", "opciones": ["🚩", "🍎", "🌎"]}
+      ]
+    },
+    {
+      "n": 29,
+      "titulo": "Sílabas con r: ar, er, ir",
+      "letra": "r",
+      "inversa": true,
+      "color": "#8A5CF0",
+      "trofeo": "🐿️",
+      "juego": "imagen",
+      "silabas": ["ar", "er", "ir", "or", "ur"],
+      "palabras": [
+        {"w": "ardilla", "e": "🐿️", "s": "ar-di-lla"},
+        {"w": "hormiga", "e": "🐜", "s": "hor-mi-ga"},
+        {"w": "tortuga", "e": "🐢", "s": "tor-tu-ga"},
+        {"w": "barco", "e": "🚢", "s": "bar-co"}
+      ],
+      "frases": ["Esa hormiga carga su terrón de azúcar.", "Ese parque está verde y hermoso.", "Perdí mi collar en tu jardín."],
+      "adivinanzas": [
+        {"texto": "Subo a los árboles y guardo nueces. Empiezo con ar. ¿Quién soy?", "resp": "🐿️", "opciones": ["🐿️", "🐜", "🐢"]},
+        {"texto": "Soy chiquita, cargo migas y empiezo con hor. ¿Quién soy?", "resp": "🐜", "opciones": ["🐜", "🚢", "🐿️"]},
+        {"texto": "Camino despacio y llevo mi casa encima. Empiezo con tor. ¿Quién soy?", "resp": "🐢", "opciones": ["🐢", "🐿️", "🐜"]}
+      ]
+    },
+    {
+      "n": 30,
+      "titulo": "Sílabas con l: al, el, il",
+      "letra": "l",
+      "inversa": true,
+      "color": "#FF3F87",
+      "trofeo": "🎂",
+      "juego": "arma",
+      "silabas": ["al", "el", "il", "ol", "ul"],
+      "palabras": [
+        {"w": "pastel", "e": "🎂", "s": "pas-tel"},
+        {"w": "pulpo", "e": "🐙", "s": "pul-po"},
+        {"w": "soldado", "e": "💂", "s": "sol-da-do"},
+        {"w": "selva", "e": "🌴", "s": "sel-va"}
+      ],
+      "frases": ["Ese soldado se fue cansado.", "Este pastel está dulce.", "Sin culpa derramé la salsa."],
+      "adivinanzas": [
+        {"texto": "Tengo velitas y me comes en tu cumpleaños. Termino en tel. ¿Qué soy?", "resp": "🎂", "opciones": ["🎂", "🐙", "💂"]},
+        {"texto": "Vivo en el mar y tengo ocho brazos. Empiezo con pul. ¿Quién soy?", "resp": "🐙", "opciones": ["🐙", "🌴", "🎂"]},
+        {"texto": "Llevo uniforme y marcho en el desfile. Empiezo con sol. ¿Quién soy?", "resp": "💂", "opciones": ["💂", "🎂", "🐙"]}
+      ]
+    },
+    {
+      "n": 31,
+      "titulo": "Sílabas con z: az, ez, iz",
+      "letra": "z",
+      "inversa": true,
+      "color": "#FF8A24",
+      "trofeo": "✏️",
+      "juego": "escucha",
+      "silabas": ["az", "ez", "iz", "oz", "uz"],
+      "palabras": [
+        {"w": "lápiz", "e": "✏️", "s": "lá-piz"},
+        {"w": "arroz", "e": "🍚", "s": "a-rroz"},
+        {"w": "pez", "e": "🐟", "s": "pez"},
+        {"w": "nariz", "e": "👃", "s": "na-riz"}
+      ],
+      "frases": ["Me gusta comer arroz.", "Tengo un lápiz verde.", "Mi hermano tiene una bonita voz."],
+      "adivinanzas": [
+        {"texto": "Escribes conmigo y termino en piz. ¿Qué soy?", "resp": "✏️", "opciones": ["✏️", "🍚", "🐟"]},
+        {"texto": "Nado en el agua y tengo escamas. Termino en ez. ¿Quién soy?", "resp": "🐟", "opciones": ["🐟", "👃", "✏️"]},
+        {"texto": "Estoy en tu cara y con ella hueles. Termino en riz. ¿Qué soy?", "resp": "👃", "opciones": ["👃", "✏️", "🍚"]}
+      ]
+    },
+    {
+      "n": 32,
+      "titulo": "Sílabas con m: am, em, im",
+      "letra": "m",
+      "inversa": true,
+      "color": "#FFC61A",
+      "trofeo": "🔔",
+      "juego": "burbujas",
+      "silabas": ["am", "em", "im", "om", "um"],
+      "palabras": [
+        {"w": "lámpara", "e": "💡", "s": "lám-pa-ra"},
+        {"w": "campana", "e": "🔔", "s": "cam-pa-na"},
+        {"w": "tambor", "e": "🥁", "s": "tam-bor"},
+        {"w": "bombero", "e": "🚒", "s": "bom-be-ro"}
+      ],
+      "frases": ["Mañana iré al campo.", "El bombero apaga un fuego.", "La campana toca al amanecer."],
+      "adivinanzas": [
+        {"texto": "Sueno din don en la iglesia. Empiezo con cam. ¿Qué soy?", "resp": "🔔", "opciones": ["🔔", "💡", "🥁"]},
+        {"texto": "Me golpeas y hago pum pum. Empiezo con tam. ¿Qué soy?", "resp": "🥁", "opciones": ["🥁", "🚒", "🔔"]},
+        {"texto": "Apago los fuegos y empiezo con bom. ¿Quién soy?", "resp": "🚒", "opciones": ["🚒", "🔔", "💡"]}
+      ]
+    },
+    {
+      "n": 33,
+      "titulo": "La x de taxi",
+      "letra": "x",
+      "color": "#12B3C4",
+      "trofeo": "🚕",
+      "juego": "imagen",
+      "silabas": ["xa", "xe", "xi", "xo", "xu"],
+      "palabras": [
+        {"w": "taxi", "e": "🚕", "s": "ta-xi"},
+        {"w": "xilófono", "e": "🎹", "s": "xi-ló-fo-no"},
+        {"w": "examen", "e": "📝", "s": "e-xa-men"},
+        {"w": "boxeo", "e": "🥊", "s": "bo-xe-o"}
+      ],
+      "frases": ["Mañana haré un viaje en taxi.", "El médico me examina el tórax.", "Yo estudio en mi texto."],
+      "adivinanzas": [
+        {"texto": "Soy amarillo, te llevo y me pagas. Termino en xi. ¿Qué soy?", "resp": "🚕", "opciones": ["🚕", "🎹", "📝"]},
+        {"texto": "Me golpeas con palitos y suenan mis láminas. Empiezo con xi. ¿Qué soy?", "resp": "🎹", "opciones": ["🎹", "🥊", "🚕"]},
+        {"texto": "La maestra me pone para ver lo que aprendiste. Tengo xa. ¿Qué soy?", "resp": "📝", "opciones": ["📝", "🚕", "🎹"]}
+      ]
+    },
+    {
+      "n": 34,
+      "titulo": "Sílabas con c: ac, ec, ic",
+      "letra": "c",
+      "inversa": true,
+      "color": "#38A85C",
+      "trofeo": "🩺",
+      "juego": "arma",
+      "silabas": ["ac", "ec", "ic", "oc", "uc"],
+      "palabras": [
+        {"w": "doctor", "e": "🩺", "s": "doc-tor"},
+        {"w": "cacto", "e": "🌵", "s": "cac-to"},
+        {"w": "lectura", "e": "📖", "s": "lec-tu-ra"},
+        {"w": "diccionario", "e": "📕", "s": "dic-cio-na-rio"}
+      ],
+      "frases": ["El doctor me curó una infección.", "Me gusta mucho la lectura.", "Cuida tu diccionario, no lo dañes."],
+      "adivinanzas": [
+        {"texto": "Te curo cuando estás enfermo. Empiezo con doc. ¿Quién soy?", "resp": "🩺", "opciones": ["🩺", "🌵", "📖"]},
+        {"texto": "Vivo en el desierto y tengo espinas. Empiezo con cac. ¿Qué soy?", "resp": "🌵", "opciones": ["🌵", "📕", "🩺"]},
+        {"texto": "Me haces cuando lees un libro. Empiezo con lec. ¿Qué soy?", "resp": "📖", "opciones": ["📖", "🩺", "🌵"]}
+      ]
+    },
+    {
+      "n": 35,
+      "titulo": "Las sílabas pla, ple, pli",
+      "letra": "pl",
+      "color": "#8A5CF0",
+      "trofeo": "🪶",
+      "juego": "escucha",
+      "silabas": ["pla", "ple", "pli", "plo", "plu"],
+      "palabras": [
+        {"w": "pluma", "e": "🪶", "s": "plu-ma"},
+        {"w": "plato", "e": "🍽️", "s": "pla-to"},
+        {"w": "playa", "e": "🏖️", "s": "pla-ya"},
+        {"w": "planeta", "e": "🪐", "s": "pla-ne-ta"}
+      ],
+      "frases": ["Vamos de paseo a la plaza.", "Las plumas son el vestido de las aves.", "La Tierra es un planeta."],
+      "adivinanzas": [
+        {"texto": "Cubro a las aves y empiezo con plu. ¿Qué soy?", "resp": "🪶", "opciones": ["🪶", "🍽️", "🏖️"]},
+        {"texto": "Tengo arena y mar y empiezo con pla. ¿Qué soy?", "resp": "🏖️", "opciones": ["🏖️", "🪐", "🪶"]},
+        {"texto": "Doy vueltas alrededor del sol. Empiezo con pla. ¿Qué soy?", "resp": "🪐", "opciones": ["🪐", "🪶", "🍽️"]}
+      ]
+    },
+    {
+      "n": 36,
+      "titulo": "Las sílabas cla, cle, cli",
+      "letra": "cl",
+      "color": "#FF3F87",
+      "trofeo": "🚲",
+      "juego": "burbujas",
+      "silabas": ["cla", "cle", "cli", "clo", "clu"],
+      "palabras": [
+        {"w": "clavel", "e": "🌺", "s": "cla-vel"},
+        {"w": "clavo", "e": "🔩", "s": "cla-vo"},
+        {"w": "bicicleta", "e": "🚲", "s": "bi-ci-cle-ta"},
+        {"w": "chicle", "e": "🍬", "s": "chi-cle"}
+      ],
+      "frases": ["Coloca ese clavo en el muro.", "Fuimos a la plaza en bicicleta.", "Esos claveles adornan la clase."],
+      "adivinanzas": [
+        {"texto": "Tengo dos ruedas y pedales. Tengo cle. ¿Qué soy?", "resp": "🚲", "opciones": ["🚲", "🌺", "🔩"]},
+        {"texto": "Soy una flor roja de olor rico. Empiezo con cla. ¿Qué soy?", "resp": "🌺", "opciones": ["🌺", "🍬", "🚲"]},
+        {"texto": "Me masticas y no me tragas. Termino en cle. ¿Qué soy?", "resp": "🍬", "opciones": ["🍬", "🔩", "🌺"]}
+      ]
+    },
+    {
+      "n": 37,
+      "titulo": "Las sílabas bla, ble, bli",
+      "letra": "bl",
+      "color": "#FF8A24",
+      "trofeo": "👚",
+      "juego": "imagen",
+      "silabas": ["bla", "ble", "bli", "blo", "blu"],
+      "palabras": [
+        {"w": "blusa", "e": "👚", "s": "blu-sa"},
+        {"w": "pueblo", "e": "🏘️", "s": "pue-blo"},
+        {"w": "tabla", "e": "🪵", "s": "ta-bla"},
+        {"w": "sable", "e": "⚔️", "s": "sa-ble"}
+      ],
+      "frases": ["Tengo un sable de juguete.", "Ese mueble es de roble.", "Qué lindo es mi pueblo."],
+      "adivinanzas": [
+        {"texto": "Me pongo en el cuerpo y empiezo con blu. ¿Qué soy?", "resp": "👚", "opciones": ["👚", "🏘️", "🪵"]},
+        {"texto": "Tengo casas, iglesia y plaza. Termino en blo. ¿Qué soy?", "resp": "🏘️", "opciones": ["🏘️", "⚔️", "👚"]},
+        {"texto": "Soy de madera, plana y larga. Termino en bla. ¿Qué soy?", "resp": "🪵", "opciones": ["🪵", "👚", "🏘️"]}
+      ]
+    },
+    {
+      "n": 38,
+      "titulo": "Las sílabas gla, gle, gli",
+      "letra": "gl",
+      "color": "#FFC61A",
+      "trofeo": "🎈",
+      "juego": "arma",
+      "silabas": ["gla", "gle", "gli", "glo", "glu"],
+      "palabras": [
+        {"w": "globo", "e": "🎈", "s": "glo-bo"},
+        {"w": "iglesia", "e": "⛪", "s": "i-gle-sia"},
+        {"w": "regla", "e": "📏", "s": "re-gla"},
+        {"w": "gladiolo", "e": "🌷", "s": "gla-dio-lo"}
+      ],
+      "frases": ["Eleva tu globo blanco.", "Mide esa tabla con tu regla.", "El domingo iré a la iglesia."],
+      "adivinanzas": [
+        {"texto": "Me lleno de aire y subo al cielo. Empiezo con glo. ¿Qué soy?", "resp": "🎈", "opciones": ["🎈", "⛪", "📏"]},
+        {"texto": "Tengo campanario y voy a misa. Tengo gle. ¿Qué soy?", "resp": "⛪", "opciones": ["⛪", "🌷", "🎈"]},
+        {"texto": "Sirvo para medir y hacer rayas derechas. Termino en gla. ¿Qué soy?", "resp": "📏", "opciones": ["📏", "🎈", "⛪"]}
+      ]
+    },
+    {
+      "n": 39,
+      "titulo": "Las sílabas fla, fle, fli",
+      "letra": "fl",
+      "color": "#12B3C4",
+      "trofeo": "🏹",
+      "juego": "escucha",
+      "silabas": ["fla", "fle", "fli", "flo", "flu"],
+      "palabras": [
+        {"w": "flecha", "e": "🏹", "s": "fle-cha"},
+        {"w": "florero", "e": "💐", "s": "flo-re-ro"},
+        {"w": "flotador", "e": "🛟", "s": "flo-ta-dor"},
+        {"w": "flor", "e": "🌸", "s": "flor"}
+      ],
+      "frases": ["Dame ese florero con gladiolos.", "La flecha sube al cielo.", "El flotador me ayuda a nadar."],
+      "adivinanzas": [
+        {"texto": "Salgo del arco y vuelo derecho. Empiezo con fle. ¿Qué soy?", "resp": "🏹", "opciones": ["🏹", "💐", "🛟"]},
+        {"texto": "Me ayudas a no hundirme en el agua. Empiezo con flo. ¿Qué soy?", "resp": "🛟", "opciones": ["🛟", "🌸", "🏹"]},
+        {"texto": "Guardo las flores con agua. Empiezo con flo. ¿Qué soy?", "resp": "💐", "opciones": ["💐", "🏹", "🛟"]}
+      ]
+    },
+    {
+      "n": 40,
+      "titulo": "Las sílabas pra, pre, pri",
+      "letra": "pr",
+      "color": "#38A85C",
+      "trofeo": "🏆",
+      "juego": "burbujas",
+      "silabas": ["pra", "pre", "pri", "pro", "pru"],
+      "palabras": [
+        {"w": "premio", "e": "🏆", "s": "pre-mio"},
+        {"w": "profesor", "e": "🧑‍🏫", "s": "pro-fe-sor"},
+        {"w": "prado", "e": "🌾", "s": "pra-do"},
+        {"w": "primero", "e": "🥇", "s": "pri-me-ro"}
+      ],
+      "frases": ["Yo cumplo todas las promesas.", "Tu profesor te prepara para la vida.", "Reclama primero tu premio."],
+      "adivinanzas": [
+        {"texto": "Me gano cuando quedo de primero. Empiezo con pre. ¿Qué soy?", "resp": "🏆", "opciones": ["🏆", "🧑‍🏫", "🌾"]},
+        {"texto": "Te enseño en la escuela. Empiezo con pro. ¿Quién soy?", "resp": "🧑‍🏫", "opciones": ["🧑‍🏫", "🥇", "🏆"]},
+        {"texto": "Soy un campo verde lleno de hierba. Empiezo con pra. ¿Qué soy?", "resp": "🌾", "opciones": ["🌾", "🏆", "🧑‍🏫"]}
+      ]
+    },
+    {
+      "n": 41,
+      "titulo": "Las sílabas tra, tre, tri",
+      "letra": "tr",
+      "color": "#8A5CF0",
+      "trofeo": "⭐",
+      "juego": "imagen",
+      "silabas": ["tra", "tre", "tri", "tro", "tru"],
+      "palabras": [
+        {"w": "trompo", "e": "🪀", "s": "trom-po"},
+        {"w": "estrella", "e": "⭐", "s": "es-tre-lla"},
+        {"w": "trineo", "e": "🛷", "s": "tri-ne-o"},
+        {"w": "tren", "e": "🚂", "s": "tren"}
+      ],
+      "frases": ["Papá me trajo un trompo bonito.", "Una estrella guió a los Reyes Magos.", "Compra un litro de leche."],
+      "adivinanzas": [
+        {"texto": "Brillo de noche en el cielo. Tengo tre. ¿Qué soy?", "resp": "⭐", "opciones": ["⭐", "🪀", "🛷"]},
+        {"texto": "Llevo vagones y voy por rieles. Empiezo con tre. ¿Qué soy?", "resp": "🚂", "opciones": ["🚂", "🛷", "⭐"]},
+        {"texto": "Bajo por la nieve y empiezo con tri. ¿Qué soy?", "resp": "🛷", "opciones": ["🛷", "⭐", "🪀"]}
+      ]
+    },
+    {
+      "n": 42,
+      "titulo": "Las sílabas gra, gre, gri",
+      "letra": "gr",
+      "color": "#FF3F87",
+      "trofeo": "🐅",
+      "juego": "arma",
+      "silabas": ["gra", "gre", "gri", "gro", "gru"],
+      "palabras": [
+        {"w": "tigre", "e": "🐅", "s": "ti-gre"},
+        {"w": "grillo", "e": "🦗", "s": "gri-llo"},
+        {"w": "cangrejo", "e": "🦀", "s": "can-gre-jo"},
+        {"w": "gruta", "e": "🕳️", "s": "gru-ta"}
+      ],
+      "frases": ["El tigre es un animal feroz.", "Encontré un cangrejo en la laguna.", "Ese agricultor cultiva trigo."],
+      "adivinanzas": [
+        {"texto": "Tengo rayas y soy feroz. Termino en gre. ¿Quién soy?", "resp": "🐅", "opciones": ["🐅", "🦗", "🦀"]},
+        {"texto": "Camino de lado y tengo tenazas. Tengo gre. ¿Quién soy?", "resp": "🦀", "opciones": ["🦀", "🕳️", "🐅"]},
+        {"texto": "Canto de noche en el campo. Empiezo con gri. ¿Quién soy?", "resp": "🦗", "opciones": ["🦗", "🐅", "🦀"]}
+      ]
+    },
+    {
+      "n": 43,
+      "titulo": "Las sílabas dra, dre, dri",
+      "letra": "dr",
+      "color": "#FF8A24",
+      "trofeo": "🐉",
+      "juego": "escucha",
+      "silabas": ["dra", "dre", "dri", "dro", "dru"],
+      "palabras": [
+        {"w": "dragón", "e": "🐉", "s": "dra-gón"},
+        {"w": "cocodrilo", "e": "🐊", "s": "co-co-dri-lo"},
+        {"w": "cuadro", "e": "🖼️", "s": "cua-dro"},
+        {"w": "piedra", "e": "🪨", "s": "pie-dra"}
+      ],
+      "frases": ["El taladro rompe la piedra.", "Ese cuadro lo pintó mi padre.", "Mi madrina regresa mañana."],
+      "adivinanzas": [
+        {"texto": "Echo fuego por la boca y empiezo con dra. ¿Quién soy?", "resp": "🐉", "opciones": ["🐉", "🐊", "🖼️"]},
+        {"texto": "Vivo en el río y tengo muchos dientes. Tengo dri. ¿Quién soy?", "resp": "🐊", "opciones": ["🐊", "🪨", "🐉"]},
+        {"texto": "Soy dura y estoy en el camino. Termino en dra. ¿Qué soy?", "resp": "🪨", "opciones": ["🪨", "🐉", "🐊"]}
+      ]
+    },
+    {
+      "n": 44,
+      "titulo": "Las sílabas cra, cre, cri",
+      "letra": "cr",
+      "color": "#FFC61A",
+      "trofeo": "🐓",
+      "juego": "burbujas",
+      "silabas": ["cra", "cre", "cri", "cro", "cru"],
+      "palabras": [
+        {"w": "crema", "e": "🧴", "s": "cre-ma"},
+        {"w": "cráter", "e": "🌋", "s": "crá-ter"},
+        {"w": "cresta", "e": "🐓", "s": "cres-ta"},
+        {"w": "cruz", "e": "✝️", "s": "cruz"}
+      ],
+      "frases": ["Me agrada la crema de leche.", "El agua cruda tiene microbios.", "Pronto saldremos al recreo."],
+      "adivinanzas": [
+        {"texto": "Soy roja y voy en la cabeza del gallo. Empiezo con cres. ¿Qué soy?", "resp": "🐓", "opciones": ["🐓", "🧴", "🌋"]},
+        {"texto": "Soy el hueco en la boca del volcán. Empiezo con crá. ¿Qué soy?", "resp": "🌋", "opciones": ["🌋", "✝️", "🐓"]},
+        {"texto": "Me untas en la piel y empiezo con cre. ¿Qué soy?", "resp": "🧴", "opciones": ["🧴", "🐓", "🌋"]}
+      ]
+    },
+    {
+      "n": 45,
+      "titulo": "Las sílabas bra, bre, bri",
+      "letra": "br",
+      "color": "#12B3C4",
+      "trofeo": "🧭",
+      "juego": "imagen",
+      "silabas": ["bra", "bre", "bri", "bro", "bru"],
+      "palabras": [
+        {"w": "brazo", "e": "💪", "s": "bra-zo"},
+        {"w": "brújula", "e": "🧭", "s": "brú-ju-la"},
+        {"w": "libro", "e": "📚", "s": "li-bro"},
+        {"w": "cabra", "e": "🐐", "s": "ca-bra"}
+      ],
+      "frases": ["La brisa mueve mi sombrero.", "Mi sobrino tiene una cabra.", "A mi abrigo le falta un broche."],
+      "adivinanzas": [
+        {"texto": "Señalo siempre al norte. Empiezo con brú. ¿Qué soy?", "resp": "🧭", "opciones": ["🧭", "💪", "📚"]},
+        {"texto": "Me lees y tengo muchas páginas. Termino en bro. ¿Qué soy?", "resp": "📚", "opciones": ["📚", "🐐", "🧭"]},
+        {"texto": "Sale de tu hombro y termina en la mano. Empiezo con bra. ¿Qué soy?", "resp": "💪", "opciones": ["💪", "🧭", "📚"]}
+      ]
+    },
+    {
+      "n": 46,
+      "titulo": "Las sílabas fra, fre, fri",
+      "letra": "fr",
+      "color": "#38A85C",
+      "trofeo": "🍓",
+      "juego": "arma",
+      "silabas": ["fra", "fre", "fri", "fro", "fru"],
+      "palabras": [
+        {"w": "fresa", "e": "🍓", "s": "fre-sa"},
+        {"w": "frutas", "e": "🍉", "s": "fru-tas"},
+        {"w": "cofre", "e": "🧰", "s": "co-fre"},
+        {"w": "freno", "e": "🛑", "s": "fre-no"}
+      ],
+      "frases": ["Qué ricas son las frutas.", "Mi madre hace desayuno de frituras.", "Te vendo una franela nueva."],
+      "adivinanzas": [
+        {"texto": "Soy roja, chiquita y con puntitos. Empiezo con fre. ¿Qué soy?", "resp": "🍓", "opciones": ["🍓", "🍉", "🧰"]},
+        {"texto": "Guardo tesoros y termino en fre. ¿Qué soy?", "resp": "🧰", "opciones": ["🧰", "🛑", "🍓"]},
+        {"texto": "Hago que el carro se detenga. Empiezo con fre. ¿Qué soy?", "resp": "🛑", "opciones": ["🛑", "🍓", "🧰"]}
+      ]
     }
   ]
 }

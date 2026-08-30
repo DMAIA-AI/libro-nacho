@@ -9,7 +9,7 @@ voice, and a reward on every correct answer.
 
 ## Lesson sequence
 
-26 lessons, in the order the book teaches them:
+46 lessons, in the order the book teaches them. First the simple letters:
 
 | # | Lesson | Syllables |
 |---|---|---|
@@ -40,10 +40,26 @@ voice, and a reward on every correct answer.
 | 25 | q de queso | que qui |
 | 26 | g de gema | ge gi |
 
-The book's second half — inverse syllables (`al`, `es`, `an`), diphthongs (`ai`, `ue`)
-and blends (`pla`, `bra`, `cri`) — is **not** covered yet. Those pages drop the
-"one letter, one syllable family" shape this app is built around, so they need a
-different lesson type.
+Then the second half of the book:
+
+| # | Lesson | Syllables |
+|---|---|---|
+| 27-32, 34 | inverse syllables | as/es/is/os/us · an/en/in/on/un · ar/er/ir/or/ur · al/el/il/ol/ul · az/ez/iz/oz/uz · am/em/im/om/um · ac/ec/ic/oc/uc |
+| 33 | x de taxi | xa xe xi xo xu |
+| 35-46 | blends | pl · cl · bl · gl · fl · pr · tr · gr · dr · cr · br · fr |
+
+Inverse-syllable lessons carry `"inversa": true`. The vowel comes first there, so the
+formador animates `a + l = al` instead of `l + a`, and the spoken formation clip says
+"a con l, al". Blends need no flag: `letra: "pl"` with `pla ple pli plo plu` already
+works, because the formador just strips the letter off the front of the syllable.
+
+Still missing, both because they drop the "one letter, one syllable family" shape:
+
+- **Diphthongs** (p61, p63, p67): `ai au ua ue io`, `ia ie`, `ay ey oy uy`. No
+  protagonist letter, so the formador does not apply.
+- **Readings** (p88-101): twelve texts and poems with comprehension questions —
+  *Mi cometa*, *Los pollitos*, *La noche*, *El campesino*, *Doña semana* and the rest.
+  That is a new section type, not a syllable family.
 
 The letter `c` and the letter `g` each appear in two lessons (hard and soft sound), so
 audio keys for the letter clip are namespaced by lesson number, not by the letter.
@@ -94,8 +110,8 @@ rename existing files and only the new clips get recorded.
 
 | File | Use |
 |---|---|
-| `index.html` | Loads `audio/*.mp3` next to it. ~90 KB. This is what GitHub Pages serves. |
-| `app-una-sola.html` | Every clip inlined as a `data:` URI — one file, works offline from a USB stick. Opt-in, because with 26 lessons it is over 15 MB. |
+| `index.html` | Loads `audio/*.mp3` next to it. ~152 KB. This is what GitHub Pages serves. |
+| `app-una-sola.html` | Every clip inlined as a `data:` URI — one file, works offline from a USB stick. Opt-in: with 46 lessons it is over 25 MB. |
 
 ## Rebuilding
 
