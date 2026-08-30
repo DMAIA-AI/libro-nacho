@@ -53,8 +53,16 @@ def recolectar(contenido):
             )
             for s in L["silabas"]:
                 clips["s:" + s] = s
+                # formación silábica: "m con a, ma." (método silábico explícito)
+                vocal = s[len(L["letra"]):] or s[-1]
+                clips["x:" + s] = "%s con %s, %s." % (L["letra"], vocal, s)
         for p in L["palabras"]:
             clips["p:" + p["w"]] = "%s... %s." % (silabas_habladas(p["s"]), p["w"])
+            # cada sílaba de cada palabra, suelta, para el resaltado sincronizado
+            for sil in p["s"].split("-"):
+                clips["s:" + sil.lower()] = sil.lower()
+            # la palabra sola, para el momento de fusión
+            clips["w:" + p["w"]] = p["w"]
         for o in L.get("frases", []):
             clips["o:" + o] = o
         for a in L.get("adivinanzas", []):

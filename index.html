@@ -113,6 +113,56 @@
   .palabrota .dibujo{font-size:clamp(5rem,20vw,7.5rem); display:block; line-height:1.15}
   .palabrota .silabeo{display:block; font-family:var(--ui); font-weight:400; font-size:1.05rem; color:var(--tinta-suave); margin-top:2px}
 
+  /* ---------- TARJETA DE DECODIFICACIÓN ----------
+     Jerarquía invertida a propósito: la sílaba es lo más grande de la tarjeta,
+     la palabra va después, y el dibujo queda chico y apagado hasta que el niño
+     decodifica. Así la imagen confirma la lectura en vez de reemplazarla. */
+  .tarjeta{width:min(100%,320px); background:var(--papel); border:5px solid var(--tinta); border-radius:var(--r-l); box-shadow:var(--sombra-p); padding:18px 14px 16px; display:flex; flex-direction:column; align-items:center; gap:10px}
+
+  .pista{display:flex; gap:10px; justify-content:center; align-items:center; transition:gap .45s cubic-bezier(.2,.8,.3,1)}
+  .pista.fusion{gap:0}
+
+  .sil{font-family:var(--display); font-weight:700; font-size:clamp(2.6rem,11vw,4rem); line-height:1;
+       color:#fff; background:var(--tinta-suave); border:4px solid var(--tinta); border-radius:18px;
+       padding:10px 16px; cursor:pointer; user-select:none;
+       transition:transform .22s cubic-bezier(.2,.8,.3,1), box-shadow .22s, background .22s, filter .22s}
+  .sil.activa{transform:translateY(-10px) scale(1.16); box-shadow:0 10px 0 var(--tinta); filter:saturate(1.3)}
+  .sil.apagada{filter:grayscale(.55) brightness(1.08)}
+  .pista.fusion .sil{border-radius:12px; transform:none; box-shadow:none}
+  .pista.fusion .sil:not(:last-child){border-right-width:0; border-top-right-radius:0; border-bottom-right-radius:0}
+  .pista.fusion .sil:not(:first-child){border-top-left-radius:0; border-bottom-left-radius:0}
+
+  .armada{font-family:var(--display); font-weight:700; font-size:clamp(1.7rem,7vw,2.4rem); line-height:1.1;
+          opacity:0; transform:scale(.8); transition:opacity .3s, transform .3s cubic-bezier(.2,1.5,.4,1)}
+  .armada.viva{opacity:1; transform:scale(1)}
+
+  .mini{font-size:2.8rem; line-height:1; opacity:.28; filter:grayscale(1);
+        transition:opacity .4s, filter .4s, transform .4s cubic-bezier(.2,1.5,.4,1)}
+  .mini.viva{opacity:1; filter:none; transform:scale(1.18)}
+
+  .leer{border:4px solid var(--tinta); background:var(--acento); color:#fff; border-radius:var(--r-l);
+        font-family:var(--display); font-weight:700; font-size:1.15rem; padding:10px 20px; cursor:pointer;
+        box-shadow:var(--sombra-p)}
+  .leer:active{transform:translateY(4px); box-shadow:none}
+  .leer[disabled]{opacity:.5; cursor:default}
+
+  /* ---------- FORMADOR: consonante + vocal = sílaba ---------- */
+  .formador{display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;
+            min-height:130px; margin:6px 0 4px}
+  .pieza{font-family:var(--display); font-weight:700; font-size:clamp(2.4rem,10vw,3.6rem); line-height:1;
+         border:4px solid var(--tinta); border-radius:16px; padding:8px 16px; background:var(--papel)}
+  .pieza.cons{color:var(--acento)}
+  .pieza.voc{color:#fff; background:var(--tinta-suave); transition:transform .5s cubic-bezier(.2,.8,.3,1)}
+  .pieza.voc.vuela{transform:translateX(-14px) scale(1.1)}
+  .pieza.res{color:#fff; background:var(--ok); opacity:0; transform:scale(.7);
+             transition:opacity .3s, transform .35s cubic-bezier(.2,1.5,.4,1)}
+  .pieza.res.viva{opacity:1; transform:scale(1)}
+  .signo{font-family:var(--display); font-weight:700; font-size:2rem; color:var(--tinta-suave)}
+
+  @media (prefers-reduced-motion: reduce){
+    .sil,.armada,.mini,.pista,.pieza.voc,.pieza.res{transition-duration:.01ms}
+  }
+
   .opcionota{width:min(100%,240px); padding:18px 10px}
   .opcionota .dibujo{font-size:clamp(5.5rem,22vw,8rem); display:block; line-height:1.1}
   .opcionota .nombre{display:block; font-size:1.5rem; margin-top:4px}
@@ -236,12 +286,12 @@
   "use strict";
 
   var CONTENIDO = {"voz": "es-DO-RamonaNeural", "velocidad": "-18%", "fragmentos": ["Hola, vamos a leer.", "Toca la", "Otra vez, busca la", "¿Cuál empieza con", "Arma la palabra", "¡Sí!", "Eso es", "Busca", "Revienta las burbujas que dicen", "¡Muy bien!", "¡Excelente!", "¡Lo lograste!", "¡Qué inteligente!", "¡Perfecto!", "¡Wow, qué bien!", "¡Casi! Escucha otra vez.", "¡Adivinaste!", "¡Bravo!", "¡Lo hiciste muy bien! Ganaste un trofeo.", "¡Escuchaste muy bien!", "¡Muy buena lectura!", "¡Adivinaste todas!", "a, e, i, o, u"], "lecciones": [{"n": 1, "titulo": "Las vocales", "letra": "a e i o u", "color": "#FF3F87", "trofeo": "🌈", "juego": "escucha", "vocales": [{"l": "a", "w": "abeja", "e": "🐝"}, {"l": "e", "w": "elefante", "e": "🐘"}, {"l": "i", "w": "iglú", "e": "🧊"}, {"l": "o", "w": "oso", "e": "🐻"}, {"l": "u", "w": "uvas", "e": "🍇"}], "palabras": [{"w": "abeja", "e": "🐝", "s": "a-be-ja"}, {"w": "elefante", "e": "🐘", "s": "e-le-fan-te"}, {"w": "iglú", "e": "🧊", "s": "i-glú"}, {"w": "oso", "e": "🐻", "s": "o-so"}, {"w": "uvas", "e": "🍇", "s": "u-vas"}], "frases": ["El oso come uvas.", "La abeja va a la loma."], "adivinanzas": [{"texto": "Vuela, hace miel y empiezo con la vocal a. ¿Quién soy?", "resp": "🐝", "opciones": ["🐝", "🐻", "🍇"]}, {"texto": "Soy muy grande, tengo trompa y empiezo con la vocal e. ¿Quién soy?", "resp": "🐘", "opciones": ["🐘", "🧊", "🐝"]}, {"texto": "Soy una casa de hielo y empiezo con la vocal i. ¿Qué soy?", "resp": "🧊", "opciones": ["🧊", "🐘", "🐻"]}]}, {"n": 2, "titulo": "La m de mamá", "letra": "m", "color": "#FF8A24", "trofeo": "💗", "juego": "burbujas", "silabas": ["ma", "me", "mi", "mo", "mu"], "palabras": [{"w": "mamá", "e": "👩", "s": "ma-má"}, {"w": "mimo", "e": "🤗", "s": "mi-mo"}, {"w": "mula", "e": "🐴", "s": "mu-la"}, {"w": "momia", "e": "🧟", "s": "mo-mia"}], "frases": ["Mi mamá me ama.", "Amo a mi mamá.", "Mi mamá me mima."], "adivinanzas": [{"texto": "Me cuida, me abraza y me da besos. Empiezo con ma. ¿Quién soy?", "resp": "👩", "opciones": ["👩", "🐴", "🤗"]}, {"texto": "Soy un animal que carga cosas y empiezo con mu. ¿Quién soy?", "resp": "🐴", "opciones": ["🐴", "👩", "🧟"]}, {"texto": "Soy un abrazo cariñoso y empiezo con mi. ¿Qué soy?", "resp": "🤗", "opciones": ["🤗", "🧟", "🐴"]}]}, {"n": 3, "titulo": "La p de papá", "letra": "p", "color": "#12B3C4", "trofeo": "⭐", "juego": "imagen", "silabas": ["pa", "pe", "pi", "po", "pu"], "palabras": [{"w": "papá", "e": "👨", "s": "pa-pá"}, {"w": "Pepe", "e": "🧒", "s": "Pe-pe"}, {"w": "puma", "e": "🐆", "s": "pu-ma"}, {"w": "mapa", "e": "🗺️", "s": "ma-pa"}], "frases": ["Mi papá me mima.", "Amo a papá.", "Mimo a mamá, amo a papá."], "adivinanzas": [{"texto": "Soy un gato grande de la montaña y empiezo con pu. ¿Quién soy?", "resp": "🐆", "opciones": ["🐆", "🗺️", "👨"]}, {"texto": "Te llevo de la mano y empiezo con pa. ¿Quién soy?", "resp": "👨", "opciones": ["👨", "🧒", "🐆"]}, {"texto": "Sirvo para no perderse en el camino. Termino en pa. ¿Qué soy?", "resp": "🗺️", "opciones": ["🗺️", "👨", "🧒"]}]}, {"n": 4, "titulo": "La l de loma", "letra": "l", "color": "#38A85C", "trofeo": "🌻", "juego": "imagen", "silabas": ["la", "le", "li", "lo", "lu"], "palabras": [{"w": "loma", "e": "⛰️", "s": "lo-ma"}, {"w": "lima", "e": "🍋", "s": "li-ma"}, {"w": "paloma", "e": "🕊️", "s": "pa-lo-ma"}, {"w": "luna", "e": "🌙", "s": "lu-na"}], "frases": ["Mi mula sale sola.", "La paloma pule la lima."], "adivinanzas": [{"texto": "Soy amarilla, ácida y empiezo con li. ¿Qué soy?", "resp": "🍋", "opciones": ["🍋", "🕊️", "⛰️"]}, {"texto": "Soy blanca, vuelo y llevo la paz. ¿Quién soy?", "resp": "🕊️", "opciones": ["🕊️", "🌙", "🍋"]}, {"texto": "Salgo de noche en el cielo y empiezo con lu. ¿Quién soy?", "resp": "🌙", "opciones": ["🌙", "⛰️", "🕊️"]}]}, {"n": 5, "titulo": "La n de nene", "letra": "n", "color": "#8A5CF0", "trofeo": "🌟", "juego": "burbujas", "silabas": ["na", "ne", "ni", "no", "nu"], "palabras": [{"w": "nene", "e": "👶", "s": "ne-ne"}, {"w": "mano", "e": "✋", "s": "ma-no"}, {"w": "mono", "e": "🐒", "s": "mo-no"}, {"w": "pino", "e": "🌲", "s": "pi-no"}], "frases": ["Esa nena me anima.", "La mona lame mi mano.", "Mi mamá mima a su nene."], "adivinanzas": [{"texto": "Soy un bebé chiquito y empiezo con ne. ¿Quién soy?", "resp": "👶", "opciones": ["👶", "🐒", "🌲"]}, {"texto": "Trepo árboles, como guineo y termino en no. ¿Quién soy?", "resp": "🐒", "opciones": ["🐒", "✋", "👶"]}, {"texto": "Tengo cinco dedos y termino en no. ¿Qué soy?", "resp": "✋", "opciones": ["✋", "🌲", "🐒"]}]}, {"n": 6, "titulo": "La t de tomate", "letra": "t", "color": "#FFC61A", "trofeo": "🍅", "juego": "arma", "silabas": ["ta", "te", "ti", "to", "tu"], "palabras": [{"w": "pato", "e": "🦆", "s": "pa-to"}, {"w": "tomate", "e": "🍅", "s": "to-ma-te"}, {"w": "pelota", "e": "⚽", "s": "pe-lo-ta"}, {"w": "moto", "e": "🏍️", "s": "mo-to"}], "frases": ["Mi nene toma su sopa.", "Su moto sí pita.", "Ese pato come tomate."], "adivinanzas": [{"texto": "Nado en el agua y digo cuac. Termino en to. ¿Quién soy?", "resp": "🦆", "opciones": ["🦆", "🍅", "⚽"]}, {"texto": "Soy rojo, redondo y voy en la ensalada. Empiezo con to. ¿Qué soy?", "resp": "🍅", "opciones": ["🍅", "🏍️", "🦆"]}, {"texto": "Ruedo, boto y sirvo para jugar. Termino en ta. ¿Qué soy?", "resp": "⚽", "opciones": ["⚽", "🦆", "🍅"]}]}, {"n": 7, "titulo": "La d de dedo", "letra": "d", "color": "#FF3F87", "trofeo": "🏆", "juego": "arma", "silabas": ["da", "de", "di", "do", "du"], "palabras": [{"w": "dedo", "e": "☝️", "s": "de-do"}, {"w": "dado", "e": "🎲", "s": "da-do"}, {"w": "moneda", "e": "🪙", "s": "mo-ne-da"}, {"w": "dulce", "e": "🍬", "s": "dul-ce"}], "frases": ["La dama me anima.", "Mi dedo toca el dado."], "adivinanzas": [{"texto": "Tengo seis caras con puntos y sirvo para jugar. Empiezo con da. ¿Qué soy?", "resp": "🎲", "opciones": ["🎲", "🪙", "🍬"]}, {"texto": "Soy redonda, dorada y sirvo para comprar. ¿Qué soy?", "resp": "🪙", "opciones": ["🪙", "☝️", "🎲"]}, {"texto": "Soy dulce, sabroso y empiezo con du. ¿Qué soy?", "resp": "🍬", "opciones": ["🍬", "🎲", "🪙"]}]}]};
-  var AUDIO = {"L:d": "audio/001-l-d.mp3", "L:l": "audio/002-l-l.mp3", "L:m": "audio/003-l-m.mp3", "L:n": "audio/004-l-n.mp3", "L:p": "audio/005-l-p.mp3", "L:t": "audio/006-l-t.mp3", "a:Me cuida, me abraza y me da besos. Empiezo con ma. ¿Quién soy?": "audio/007-a-me-cuida-me-abraza-y-me-da-besos.mp3", "a:Nado en el agua y digo cuac. Termino en to. ¿Quién soy?": "audio/008-a-nado-en-el-agua-y-digo-cuac-term.mp3", "a:Ruedo, boto y sirvo para jugar. Termino en ta. ¿Qué soy?": "audio/009-a-ruedo-boto-y-sirvo-para-jugar-te.mp3", "a:Salgo de noche en el cielo y empiezo con lu. ¿Quién soy?": "audio/010-a-salgo-de-noche-en-el-cielo-y-emp.mp3", "a:Sirvo para no perderse en el camino. Termino en pa. ¿Qué soy?": "audio/011-a-sirvo-para-no-perderse-en-el-cam.mp3", "a:Soy amarilla, ácida y empiezo con li. ¿Qué soy?": "audio/012-a-soy-amarilla-cida-y-empiezo-con.mp3", "a:Soy blanca, vuelo y llevo la paz. ¿Quién soy?": "audio/013-a-soy-blanca-vuelo-y-llevo-la-paz.mp3", "a:Soy dulce, sabroso y empiezo con du. ¿Qué soy?": "audio/014-a-soy-dulce-sabroso-y-empiezo-con.mp3", "a:Soy muy grande, tengo trompa y empiezo con la vocal e. ¿Quién soy?": "audio/015-a-soy-muy-grande-tengo-trompa-y-em.mp3", "a:Soy redonda, dorada y sirvo para comprar. ¿Qué soy?": "audio/016-a-soy-redonda-dorada-y-sirvo-para.mp3", "a:Soy rojo, redondo y voy en la ensalada. Empiezo con to. ¿Qué soy?": "audio/017-a-soy-rojo-redondo-y-voy-en-la-ens.mp3", "a:Soy un abrazo cariñoso y empiezo con mi. ¿Qué soy?": "audio/018-a-soy-un-abrazo-cari-oso-y-empiezo.mp3", "a:Soy un animal que carga cosas y empiezo con mu. ¿Quién soy?": "audio/019-a-soy-un-animal-que-carga-cosas-y.mp3", "a:Soy un bebé chiquito y empiezo con ne. ¿Quién soy?": "audio/020-a-soy-un-beb-chiquito-y-empiezo-co.mp3", "a:Soy un gato grande de la montaña y empiezo con pu. ¿Quién soy?": "audio/021-a-soy-un-gato-grande-de-la-monta-a.mp3", "a:Soy una casa de hielo y empiezo con la vocal i. ¿Qué soy?": "audio/022-a-soy-una-casa-de-hielo-y-empiezo.mp3", "a:Te llevo de la mano y empiezo con pa. ¿Quién soy?": "audio/023-a-te-llevo-de-la-mano-y-empiezo-co.mp3", "a:Tengo cinco dedos y termino en no. ¿Qué soy?": "audio/024-a-tengo-cinco-dedos-y-termino-en-n.mp3", "a:Tengo seis caras con puntos y sirvo para jugar. Empiezo con da. ¿Qué soy?": "audio/025-a-tengo-seis-caras-con-puntos-y-si.mp3", "a:Trepo árboles, como guineo y termino en no. ¿Quién soy?": "audio/026-a-trepo-rboles-como-guineo-y-termi.mp3", "a:Vuela, hace miel y empiezo con la vocal a. ¿Quién soy?": "audio/027-a-vuela-hace-miel-y-empiezo-con-la.mp3", "f:Arma la palabra": "audio/028-f-arma-la-palabra.mp3", "f:Busca": "audio/029-f-busca.mp3", "f:Eso es": "audio/030-f-eso-es.mp3", "f:Hola, vamos a leer.": "audio/031-f-hola-vamos-a-leer.mp3", "f:Otra vez, busca la": "audio/032-f-otra-vez-busca-la.mp3", "f:Revienta las burbujas que dicen": "audio/033-f-revienta-las-burbujas-que-dicen.mp3", "f:Toca la": "audio/034-f-toca-la.mp3", "f:a, e, i, o, u": "audio/035-f-a-e-i-o-u.mp3", "f:¡Adivinaste todas!": "audio/036-f-adivinaste-todas.mp3", "f:¡Adivinaste!": "audio/037-f-adivinaste.mp3", "f:¡Bravo!": "audio/038-f-bravo.mp3", "f:¡Casi! Escucha otra vez.": "audio/039-f-casi-escucha-otra-vez.mp3", "f:¡Escuchaste muy bien!": "audio/040-f-escuchaste-muy-bien.mp3", "f:¡Excelente!": "audio/041-f-excelente.mp3", "f:¡Lo hiciste muy bien! Ganaste un trofeo.": "audio/042-f-lo-hiciste-muy-bien-ganaste-un-t.mp3", "f:¡Lo lograste!": "audio/043-f-lo-lograste.mp3", "f:¡Muy bien!": "audio/044-f-muy-bien.mp3", "f:¡Muy buena lectura!": "audio/045-f-muy-buena-lectura.mp3", "f:¡Perfecto!": "audio/046-f-perfecto.mp3", "f:¡Qué inteligente!": "audio/047-f-qu-inteligente.mp3", "f:¡Sí!": "audio/048-f-s.mp3", "f:¡Wow, qué bien!": "audio/049-f-wow-qu-bien.mp3", "f:¿Cuál empieza con": "audio/050-f-cu-l-empieza-con.mp3", "o:Amo a mi mamá.": "audio/051-o-amo-a-mi-mam.mp3", "o:Amo a papá.": "audio/052-o-amo-a-pap.mp3", "o:El oso come uvas.": "audio/053-o-el-oso-come-uvas.mp3", "o:Esa nena me anima.": "audio/054-o-esa-nena-me-anima.mp3", "o:Ese pato come tomate.": "audio/055-o-ese-pato-come-tomate.mp3", "o:La abeja va a la loma.": "audio/056-o-la-abeja-va-a-la-loma.mp3", "o:La dama me anima.": "audio/057-o-la-dama-me-anima.mp3", "o:La mona lame mi mano.": "audio/058-o-la-mona-lame-mi-mano.mp3", "o:La paloma pule la lima.": "audio/059-o-la-paloma-pule-la-lima.mp3", "o:Mi dedo toca el dado.": "audio/060-o-mi-dedo-toca-el-dado.mp3", "o:Mi mamá me ama.": "audio/061-o-mi-mam-me-ama.mp3", "o:Mi mamá me mima.": "audio/062-o-mi-mam-me-mima.mp3", "o:Mi mamá mima a su nene.": "audio/063-o-mi-mam-mima-a-su-nene.mp3", "o:Mi mula sale sola.": "audio/064-o-mi-mula-sale-sola.mp3", "o:Mi nene toma su sopa.": "audio/065-o-mi-nene-toma-su-sopa.mp3", "o:Mi papá me mima.": "audio/066-o-mi-pap-me-mima.mp3", "o:Mimo a mamá, amo a papá.": "audio/067-o-mimo-a-mam-amo-a-pap.mp3", "o:Su moto sí pita.": "audio/068-o-su-moto-s-pita.mp3", "p:Pepe": "audio/069-p-pepe.mp3", "p:abeja": "audio/070-p-abeja.mp3", "p:dado": "audio/071-p-dado.mp3", "p:dedo": "audio/072-p-dedo.mp3", "p:dulce": "audio/073-p-dulce.mp3", "p:elefante": "audio/074-p-elefante.mp3", "p:iglú": "audio/075-p-igl.mp3", "p:lima": "audio/076-p-lima.mp3", "p:loma": "audio/077-p-loma.mp3", "p:luna": "audio/078-p-luna.mp3", "p:mamá": "audio/079-p-mam.mp3", "p:mano": "audio/080-p-mano.mp3", "p:mapa": "audio/081-p-mapa.mp3", "p:mimo": "audio/082-p-mimo.mp3", "p:momia": "audio/083-p-momia.mp3", "p:moneda": "audio/084-p-moneda.mp3", "p:mono": "audio/085-p-mono.mp3", "p:moto": "audio/086-p-moto.mp3", "p:mula": "audio/087-p-mula.mp3", "p:nene": "audio/088-p-nene.mp3", "p:oso": "audio/089-p-oso.mp3", "p:paloma": "audio/090-p-paloma.mp3", "p:papá": "audio/091-p-pap.mp3", "p:pato": "audio/092-p-pato.mp3", "p:pelota": "audio/093-p-pelota.mp3", "p:pino": "audio/094-p-pino.mp3", "p:puma": "audio/095-p-puma.mp3", "p:tomate": "audio/096-p-tomate.mp3", "p:uvas": "audio/097-p-uvas.mp3", "s:a": "audio/098-s-a.mp3", "s:da": "audio/099-s-da.mp3", "s:de": "audio/100-s-de.mp3", "s:di": "audio/101-s-di.mp3", "s:do": "audio/102-s-do.mp3", "s:du": "audio/103-s-du.mp3", "s:e": "audio/104-s-e.mp3", "s:i": "audio/105-s-i.mp3", "s:la": "audio/106-s-la.mp3", "s:le": "audio/107-s-le.mp3", "s:li": "audio/108-s-li.mp3", "s:lo": "audio/109-s-lo.mp3", "s:lu": "audio/110-s-lu.mp3", "s:ma": "audio/111-s-ma.mp3", "s:me": "audio/112-s-me.mp3", "s:mi": "audio/113-s-mi.mp3", "s:mo": "audio/114-s-mo.mp3", "s:mu": "audio/115-s-mu.mp3", "s:na": "audio/116-s-na.mp3", "s:ne": "audio/117-s-ne.mp3", "s:ni": "audio/118-s-ni.mp3", "s:no": "audio/119-s-no.mp3", "s:nu": "audio/120-s-nu.mp3", "s:o": "audio/121-s-o.mp3", "s:pa": "audio/122-s-pa.mp3", "s:pe": "audio/123-s-pe.mp3", "s:pi": "audio/124-s-pi.mp3", "s:po": "audio/125-s-po.mp3", "s:pu": "audio/126-s-pu.mp3", "s:ta": "audio/127-s-ta.mp3", "s:te": "audio/128-s-te.mp3", "s:ti": "audio/129-s-ti.mp3", "s:to": "audio/130-s-to.mp3", "s:tu": "audio/131-s-tu.mp3", "s:u": "audio/132-s-u.mp3", "v:a": "audio/133-v-a.mp3", "v:e": "audio/134-v-e.mp3", "v:i": "audio/135-v-i.mp3", "v:o": "audio/136-v-o.mp3", "v:u": "audio/137-v-u.mp3"};
+  var AUDIO = {"L:d": "audio/001-l-d.mp3", "L:l": "audio/002-l-l.mp3", "L:m": "audio/003-l-m.mp3", "L:n": "audio/004-l-n.mp3", "L:p": "audio/005-l-p.mp3", "L:t": "audio/006-l-t.mp3", "a:Me cuida, me abraza y me da besos. Empiezo con ma. ¿Quién soy?": "audio/007-a-me-cuida-me-abraza-y-me-da-besos.mp3", "a:Nado en el agua y digo cuac. Termino en to. ¿Quién soy?": "audio/008-a-nado-en-el-agua-y-digo-cuac-term.mp3", "a:Ruedo, boto y sirvo para jugar. Termino en ta. ¿Qué soy?": "audio/009-a-ruedo-boto-y-sirvo-para-jugar-te.mp3", "a:Salgo de noche en el cielo y empiezo con lu. ¿Quién soy?": "audio/010-a-salgo-de-noche-en-el-cielo-y-emp.mp3", "a:Sirvo para no perderse en el camino. Termino en pa. ¿Qué soy?": "audio/011-a-sirvo-para-no-perderse-en-el-cam.mp3", "a:Soy amarilla, ácida y empiezo con li. ¿Qué soy?": "audio/012-a-soy-amarilla-cida-y-empiezo-con.mp3", "a:Soy blanca, vuelo y llevo la paz. ¿Quién soy?": "audio/013-a-soy-blanca-vuelo-y-llevo-la-paz.mp3", "a:Soy dulce, sabroso y empiezo con du. ¿Qué soy?": "audio/014-a-soy-dulce-sabroso-y-empiezo-con.mp3", "a:Soy muy grande, tengo trompa y empiezo con la vocal e. ¿Quién soy?": "audio/015-a-soy-muy-grande-tengo-trompa-y-em.mp3", "a:Soy redonda, dorada y sirvo para comprar. ¿Qué soy?": "audio/016-a-soy-redonda-dorada-y-sirvo-para.mp3", "a:Soy rojo, redondo y voy en la ensalada. Empiezo con to. ¿Qué soy?": "audio/017-a-soy-rojo-redondo-y-voy-en-la-ens.mp3", "a:Soy un abrazo cariñoso y empiezo con mi. ¿Qué soy?": "audio/018-a-soy-un-abrazo-cari-oso-y-empiezo.mp3", "a:Soy un animal que carga cosas y empiezo con mu. ¿Quién soy?": "audio/019-a-soy-un-animal-que-carga-cosas-y.mp3", "a:Soy un bebé chiquito y empiezo con ne. ¿Quién soy?": "audio/020-a-soy-un-beb-chiquito-y-empiezo-co.mp3", "a:Soy un gato grande de la montaña y empiezo con pu. ¿Quién soy?": "audio/021-a-soy-un-gato-grande-de-la-monta-a.mp3", "a:Soy una casa de hielo y empiezo con la vocal i. ¿Qué soy?": "audio/022-a-soy-una-casa-de-hielo-y-empiezo.mp3", "a:Te llevo de la mano y empiezo con pa. ¿Quién soy?": "audio/023-a-te-llevo-de-la-mano-y-empiezo-co.mp3", "a:Tengo cinco dedos y termino en no. ¿Qué soy?": "audio/024-a-tengo-cinco-dedos-y-termino-en-n.mp3", "a:Tengo seis caras con puntos y sirvo para jugar. Empiezo con da. ¿Qué soy?": "audio/025-a-tengo-seis-caras-con-puntos-y-si.mp3", "a:Trepo árboles, como guineo y termino en no. ¿Quién soy?": "audio/026-a-trepo-rboles-como-guineo-y-termi.mp3", "a:Vuela, hace miel y empiezo con la vocal a. ¿Quién soy?": "audio/027-a-vuela-hace-miel-y-empiezo-con-la.mp3", "f:Arma la palabra": "audio/028-f-arma-la-palabra.mp3", "f:Busca": "audio/029-f-busca.mp3", "f:Eso es": "audio/030-f-eso-es.mp3", "f:Hola, vamos a leer.": "audio/031-f-hola-vamos-a-leer.mp3", "f:Otra vez, busca la": "audio/032-f-otra-vez-busca-la.mp3", "f:Revienta las burbujas que dicen": "audio/033-f-revienta-las-burbujas-que-dicen.mp3", "f:Toca la": "audio/034-f-toca-la.mp3", "f:a, e, i, o, u": "audio/035-f-a-e-i-o-u.mp3", "f:¡Adivinaste todas!": "audio/036-f-adivinaste-todas.mp3", "f:¡Adivinaste!": "audio/037-f-adivinaste.mp3", "f:¡Bravo!": "audio/038-f-bravo.mp3", "f:¡Casi! Escucha otra vez.": "audio/039-f-casi-escucha-otra-vez.mp3", "f:¡Escuchaste muy bien!": "audio/040-f-escuchaste-muy-bien.mp3", "f:¡Excelente!": "audio/041-f-excelente.mp3", "f:¡Lo hiciste muy bien! Ganaste un trofeo.": "audio/042-f-lo-hiciste-muy-bien-ganaste-un-t.mp3", "f:¡Lo lograste!": "audio/043-f-lo-lograste.mp3", "f:¡Muy bien!": "audio/044-f-muy-bien.mp3", "f:¡Muy buena lectura!": "audio/045-f-muy-buena-lectura.mp3", "f:¡Perfecto!": "audio/046-f-perfecto.mp3", "f:¡Qué inteligente!": "audio/047-f-qu-inteligente.mp3", "f:¡Sí!": "audio/048-f-s.mp3", "f:¡Wow, qué bien!": "audio/049-f-wow-qu-bien.mp3", "f:¿Cuál empieza con": "audio/050-f-cu-l-empieza-con.mp3", "o:Amo a mi mamá.": "audio/051-o-amo-a-mi-mam.mp3", "o:Amo a papá.": "audio/052-o-amo-a-pap.mp3", "o:El oso come uvas.": "audio/053-o-el-oso-come-uvas.mp3", "o:Esa nena me anima.": "audio/054-o-esa-nena-me-anima.mp3", "o:Ese pato come tomate.": "audio/055-o-ese-pato-come-tomate.mp3", "o:La abeja va a la loma.": "audio/056-o-la-abeja-va-a-la-loma.mp3", "o:La dama me anima.": "audio/057-o-la-dama-me-anima.mp3", "o:La mona lame mi mano.": "audio/058-o-la-mona-lame-mi-mano.mp3", "o:La paloma pule la lima.": "audio/059-o-la-paloma-pule-la-lima.mp3", "o:Mi dedo toca el dado.": "audio/060-o-mi-dedo-toca-el-dado.mp3", "o:Mi mamá me ama.": "audio/061-o-mi-mam-me-ama.mp3", "o:Mi mamá me mima.": "audio/062-o-mi-mam-me-mima.mp3", "o:Mi mamá mima a su nene.": "audio/063-o-mi-mam-mima-a-su-nene.mp3", "o:Mi mula sale sola.": "audio/064-o-mi-mula-sale-sola.mp3", "o:Mi nene toma su sopa.": "audio/065-o-mi-nene-toma-su-sopa.mp3", "o:Mi papá me mima.": "audio/066-o-mi-pap-me-mima.mp3", "o:Mimo a mamá, amo a papá.": "audio/067-o-mimo-a-mam-amo-a-pap.mp3", "o:Su moto sí pita.": "audio/068-o-su-moto-s-pita.mp3", "p:Pepe": "audio/069-p-pepe.mp3", "p:abeja": "audio/070-p-abeja.mp3", "p:dado": "audio/071-p-dado.mp3", "p:dedo": "audio/072-p-dedo.mp3", "p:dulce": "audio/073-p-dulce.mp3", "p:elefante": "audio/074-p-elefante.mp3", "p:iglú": "audio/075-p-igl.mp3", "p:lima": "audio/076-p-lima.mp3", "p:loma": "audio/077-p-loma.mp3", "p:luna": "audio/078-p-luna.mp3", "p:mamá": "audio/079-p-mam.mp3", "p:mano": "audio/080-p-mano.mp3", "p:mapa": "audio/081-p-mapa.mp3", "p:mimo": "audio/082-p-mimo.mp3", "p:momia": "audio/083-p-momia.mp3", "p:moneda": "audio/084-p-moneda.mp3", "p:mono": "audio/085-p-mono.mp3", "p:moto": "audio/086-p-moto.mp3", "p:mula": "audio/087-p-mula.mp3", "p:nene": "audio/088-p-nene.mp3", "p:oso": "audio/089-p-oso.mp3", "p:paloma": "audio/090-p-paloma.mp3", "p:papá": "audio/091-p-pap.mp3", "p:pato": "audio/092-p-pato.mp3", "p:pelota": "audio/093-p-pelota.mp3", "p:pino": "audio/094-p-pino.mp3", "p:puma": "audio/095-p-puma.mp3", "p:tomate": "audio/096-p-tomate.mp3", "p:uvas": "audio/097-p-uvas.mp3", "s:a": "audio/098-s-a.mp3", "s:be": "audio/099-s-be.mp3", "s:ce": "audio/100-s-ce.mp3", "s:da": "audio/101-s-da.mp3", "s:de": "audio/102-s-de.mp3", "s:di": "audio/103-s-di.mp3", "s:do": "audio/104-s-do.mp3", "s:du": "audio/105-s-du.mp3", "s:dul": "audio/106-s-dul.mp3", "s:e": "audio/107-s-e.mp3", "s:fan": "audio/108-s-fan.mp3", "s:glú": "audio/109-s-gl.mp3", "s:i": "audio/110-s-i.mp3", "s:ja": "audio/111-s-ja.mp3", "s:la": "audio/112-s-la.mp3", "s:le": "audio/113-s-le.mp3", "s:li": "audio/114-s-li.mp3", "s:lo": "audio/115-s-lo.mp3", "s:lu": "audio/116-s-lu.mp3", "s:ma": "audio/117-s-ma.mp3", "s:me": "audio/118-s-me.mp3", "s:mi": "audio/119-s-mi.mp3", "s:mia": "audio/120-s-mia.mp3", "s:mo": "audio/121-s-mo.mp3", "s:mu": "audio/122-s-mu.mp3", "s:má": "audio/123-s-m.mp3", "s:na": "audio/124-s-na.mp3", "s:ne": "audio/125-s-ne.mp3", "s:ni": "audio/126-s-ni.mp3", "s:no": "audio/127-s-no.mp3", "s:nu": "audio/128-s-nu.mp3", "s:o": "audio/129-s-o.mp3", "s:pa": "audio/130-s-pa.mp3", "s:pe": "audio/131-s-pe.mp3", "s:pi": "audio/132-s-pi.mp3", "s:po": "audio/133-s-po.mp3", "s:pu": "audio/134-s-pu.mp3", "s:pá": "audio/135-s-p.mp3", "s:so": "audio/136-s-so.mp3", "s:ta": "audio/137-s-ta.mp3", "s:te": "audio/138-s-te.mp3", "s:ti": "audio/139-s-ti.mp3", "s:to": "audio/140-s-to.mp3", "s:tu": "audio/141-s-tu.mp3", "s:u": "audio/142-s-u.mp3", "s:vas": "audio/143-s-vas.mp3", "v:a": "audio/144-v-a.mp3", "v:e": "audio/145-v-e.mp3", "v:i": "audio/146-v-i.mp3", "v:o": "audio/147-v-o.mp3", "v:u": "audio/148-v-u.mp3", "w:Pepe": "audio/149-w-pepe.mp3", "w:abeja": "audio/150-w-abeja.mp3", "w:dado": "audio/151-w-dado.mp3", "w:dedo": "audio/152-w-dedo.mp3", "w:dulce": "audio/153-w-dulce.mp3", "w:elefante": "audio/154-w-elefante.mp3", "w:iglú": "audio/155-w-igl.mp3", "w:lima": "audio/156-w-lima.mp3", "w:loma": "audio/157-w-loma.mp3", "w:luna": "audio/158-w-luna.mp3", "w:mamá": "audio/159-w-mam.mp3", "w:mano": "audio/160-w-mano.mp3", "w:mapa": "audio/161-w-mapa.mp3", "w:mimo": "audio/162-w-mimo.mp3", "w:momia": "audio/163-w-momia.mp3", "w:moneda": "audio/164-w-moneda.mp3", "w:mono": "audio/165-w-mono.mp3", "w:moto": "audio/166-w-moto.mp3", "w:mula": "audio/167-w-mula.mp3", "w:nene": "audio/168-w-nene.mp3", "w:oso": "audio/169-w-oso.mp3", "w:paloma": "audio/170-w-paloma.mp3", "w:papá": "audio/171-w-pap.mp3", "w:pato": "audio/172-w-pato.mp3", "w:pelota": "audio/173-w-pelota.mp3", "w:pino": "audio/174-w-pino.mp3", "w:puma": "audio/175-w-puma.mp3", "w:tomate": "audio/176-w-tomate.mp3", "w:uvas": "audio/177-w-uvas.mp3", "x:da": "audio/178-x-da.mp3", "x:de": "audio/179-x-de.mp3", "x:di": "audio/180-x-di.mp3", "x:do": "audio/181-x-do.mp3", "x:du": "audio/182-x-du.mp3", "x:la": "audio/183-x-la.mp3", "x:le": "audio/184-x-le.mp3", "x:li": "audio/185-x-li.mp3", "x:lo": "audio/186-x-lo.mp3", "x:lu": "audio/187-x-lu.mp3", "x:ma": "audio/188-x-ma.mp3", "x:me": "audio/189-x-me.mp3", "x:mi": "audio/190-x-mi.mp3", "x:mo": "audio/191-x-mo.mp3", "x:mu": "audio/192-x-mu.mp3", "x:na": "audio/193-x-na.mp3", "x:ne": "audio/194-x-ne.mp3", "x:ni": "audio/195-x-ni.mp3", "x:no": "audio/196-x-no.mp3", "x:nu": "audio/197-x-nu.mp3", "x:pa": "audio/198-x-pa.mp3", "x:pe": "audio/199-x-pe.mp3", "x:pi": "audio/200-x-pi.mp3", "x:po": "audio/201-x-po.mp3", "x:pu": "audio/202-x-pu.mp3", "x:ta": "audio/203-x-ta.mp3", "x:te": "audio/204-x-te.mp3", "x:ti": "audio/205-x-ti.mp3", "x:to": "audio/206-x-to.mp3", "x:tu": "audio/207-x-tu.mp3"};
 
   var LECCIONES = CONTENIDO.lecciones;
   var SECCIONES = [
     {id:"sonidos",  icono:"🔊", nombre:"Sonidos"},
-    {id:"palabras", icono:"🖼️", nombre:"Dibujos"},
+    {id:"palabras", icono:"🔤", nombre:"Sílabas"},
     {id:"adivina",  icono:"🧩", nombre:"Adivinanzas"},
     {id:"juego",    icono:"🎮", nombre:"Juego"}
   ];
@@ -309,16 +359,30 @@
     }catch(e){}
   }
 
+  /* Ganchos de sincronía: alClip(clave) al arrancar cada clip, alFinal() al
+     vaciarse la cola. Con esto la animación de sílabas va pegada al audio real
+     en vez de a un temporizador a ciegas. */
+  var alClip = null, alFinal = null;
+
+  function cerrarCola(){
+    var f = alFinal; alClip = null; alFinal = null;
+    if(f) f();
+  }
+
   function siguienteClip(){
-    if(!cola.length) return;
+    if(!cola.length){ cerrarCola(); return; }
     var clave = cola.shift();
     var fuente = AUDIO[clave];
     if(!fuente){
       // clip que no se generó: respaldo con la voz del navegador
+      if(alClip) alClip(clave);
       respaldoVoz([clave]);
       cola = [];
+      // speechSynthesis no da un "ended" fiable: cerramos por tiempo estimado
+      setTimeout(cerrarCola, 420 + textoDe(clave).length * 55);
       return;
     }
+    if(alClip) alClip(clave);
     reproductor.src = fuente;
     var promesa = reproductor.play();
     if(promesa && promesa.catch){
@@ -330,15 +394,28 @@
   }
 
   reproductor.addEventListener("ended", function(){ siguienteClip(); });
-  reproductor.addEventListener("error", function(){ cola = []; });
+  reproductor.addEventListener("error", function(){ cola = []; cerrarCola(); });
 
   function hablar(){
     var claves = Array.prototype.slice.call(arguments).filter(Boolean);
     cola = claves;
+    alClip = null; alFinal = null;
     try{ reproductor.pause(); }catch(e){}
     siguienteClip();
   }
-  function callar(){ cola = []; try{ reproductor.pause(); }catch(e){} }
+
+  /* Igual que hablar(), pero avisando sílaba por sílaba.
+     claves: array de claves de audio. cada: function(clave, indice). fin: function(). */
+  function hablarGuiado(claves, cada, fin){
+    cola = claves.filter(Boolean);
+    var i = -1;
+    alClip = function(clave){ i++; if(cada) cada(clave, i); };
+    alFinal = fin || null;
+    try{ reproductor.pause(); }catch(e){}
+    siguienteClip();
+  }
+
+  function callar(){ cola = []; alClip = null; alFinal = null; try{ reproductor.pause(); }catch(e){} }
 
   function desbloquear(){
     if(desbloqueado) return;
@@ -591,18 +668,43 @@
       t.appendChild(r);
     } else {
       t.appendChild(el("h2", null, L.titulo));
-      t.appendChild(el("p","guia","Toca la letra grande y luego cada sílaba."));
+      t.appendChild(el("p","guia","Toca una sílaba y mira cómo la letra y la vocal se juntan."));
       var g = el("button","letrota"); g.type = "button";
       g.textContent = L.letra + " " + L.letra.toUpperCase();
       g.setAttribute("aria-label","Escuchar la letra " + L.letra);
       g.addEventListener("click", function(){ RUIDOS.pop(); brinca(g); hablar("L:" + L.letra); });
       t.appendChild(g);
 
+      /* Formador: enseña CÓMO nace la sílaba (m + a = ma). Es el corazón del
+         método silábico. Antes la sílaba aparecía ya hecha, sin mostrar la
+         síntesis, que es justo la operación que el niño tiene que aprender. */
+      var forma  = el("div","formador");
+      var cons   = el("b","pieza cons", L.letra);
+      var voc    = el("b","pieza voc","a");
+      var res    = el("b","pieza res", L.silabas[0]);
+      forma.appendChild(cons);
+      forma.appendChild(el("span","signo","+"));
+      forma.appendChild(voc);
+      forma.appendChild(el("span","signo","="));
+      forma.appendChild(res);
+      t.appendChild(forma);
+
+      function formar(s){
+        voc.textContent = s.slice(L.letra.length) || s.slice(-1);
+        res.textContent = s;
+        voc.classList.remove("vuela"); res.classList.remove("viva");
+        void voc.offsetWidth;                 // reinicia la animación
+        voc.classList.add("vuela");
+        setTimeout(function(){ res.classList.add("viva"); }, 480);
+        hablar("x:" + s);
+      }
+      voc.textContent = L.silabas[0].slice(L.letra.length) || L.silabas[0].slice(-1);
+
       var r2 = el("div","fila"); r2.style.marginTop = "18px";
       L.silabas.forEach(function(s,i){
         var f = el("button","ficha silaba", s); f.type = "button";
         f.style.background = PALETA[i % PALETA.length];
-        f.addEventListener("click", function(){ RUIDOS.pop(); brinca(f); hablar("s:" + s); });
+        f.addEventListener("click", function(){ RUIDOS.pop(); brinca(f); formar(s); });
         r2.appendChild(f);
       });
       t.appendChild(r2);
@@ -628,27 +730,84 @@
     t.appendChild(caja);
   }
 
-  /* ---------- 2. DIBUJOS ---------- */
+  /* ---------- 2. LEER POR SÍLABAS ----------
+     Antes: dibujo gigante, palabra mediana y el silabeo en gris chiquito debajo.
+     El niño miraba el dibujo y adivinaba la palabra sin decodificar nada.
+     Ahora la sílaba es la protagonista: se encienden una por una al ritmo del
+     audio real, luego se juntan (fusión) para formar la palabra, y el dibujo
+     recién se destapa al final, como confirmación de la lectura. */
   function secPalabras(L, t){
-    t.appendChild(el("h2", null, "Mira y lee"));
-    t.appendChild(el("p","guia","Toca cada dibujo para oír la palabra por sílabas."));
+    t.appendChild(el("h2", null, "Lee por sílabas"));
+    t.appendChild(el("p","guia","Toca 🔊 y sigue las sílabas que se encienden. Al final se juntan y forman la palabra."));
 
-    var vistos = {}, r = el("div","fila");
+    var vistos = {}, r = el("div","fila"), lectorActivo = null;
+
     L.palabras.forEach(function(p){
-      var f = el("button","ficha palabrota"); f.type = "button";
-      f.appendChild(el("span","dibujo", p.e));
-      f.appendChild(document.createTextNode(p.w));
-      f.appendChild(el("span","silabeo", p.s));
-      f.addEventListener("click", function(){
-        RUIDOS.pop(); brinca(f); hablar("p:" + p.w);
-        if(!vistos[p.w]){
-          vistos[p.w] = true;
-          if(Object.keys(vistos).length === L.palabras.length){
-            setTimeout(function(){ premiar("¡Leíste todas las palabras!", false); }, 900);
-          }
-        }
+      var silabas = p.s.split("-");
+      var tarjeta = el("article","tarjeta");
+
+      var pista = el("div","pista");
+      var chips = silabas.map(function(s,i){
+        var c = el("b","sil apagada", s);
+        c.style.background = PALETA[i % PALETA.length];
+        c.addEventListener("click", function(){
+          RUIDOS.pop(); brinca(c); hablar("s:" + s.toLowerCase());
+        });
+        pista.appendChild(c);
+        return c;
       });
-      r.appendChild(f);
+      tarjeta.appendChild(pista);
+
+      var armada = el("div","armada", p.w);
+      var mini = el("span","mini", p.e);
+      var boton = el("button","leer","🔊 Leer"); boton.type = "button";
+      tarjeta.appendChild(armada);
+      tarjeta.appendChild(mini);
+      tarjeta.appendChild(boton);
+
+      function reset(){
+        pista.classList.remove("fusion");
+        armada.classList.remove("viva");
+        mini.classList.remove("viva");
+        chips.forEach(function(c){ c.classList.remove("activa"); c.classList.add("apagada"); });
+        boton.disabled = false;
+      }
+
+      boton.addEventListener("click", function(){
+        RUIDOS.toque();
+        if(lectorActivo) lectorActivo();      // corta una lectura anterior a medias
+        reset();
+        lectorActivo = reset;
+        boton.disabled = true;
+
+        var claves = silabas.map(function(s){ return "s:" + s.toLowerCase(); });
+        claves.push("w:" + p.w);              // la palabra entera cierra la secuencia
+
+        hablarGuiado(claves, function(clave, i){
+          chips.forEach(function(c){ c.classList.remove("activa"); });
+          if(i < chips.length){
+            chips[i].classList.remove("apagada");
+            chips[i].classList.add("activa");
+          } else {
+            chips.forEach(function(c){ c.classList.remove("apagada"); });
+            pista.classList.add("fusion");
+            armada.classList.add("viva");
+          }
+        }, function(){
+          lectorActivo = null;
+          chips.forEach(function(c){ c.classList.remove("activa"); });
+          mini.classList.add("viva");
+          boton.disabled = false;
+          if(!vistos[p.w]){
+            vistos[p.w] = true;
+            if(Object.keys(vistos).length === L.palabras.length){
+              setTimeout(function(){ premiar("¡Leíste todas las palabras!", false); }, 700);
+            }
+          }
+        });
+      });
+
+      r.appendChild(tarjeta);
     });
     t.appendChild(r);
 
