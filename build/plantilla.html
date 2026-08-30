@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Nacho Lee — Mis primeras 7 lecciones</title>
+<title>Nacho Lee — Aprendo a leer por sílabas</title>
 
 <style>
   :root{
@@ -249,7 +249,7 @@
   <div class="caja">
     <div class="letras"><span>a</span><span>e</span><span>i</span><span>o</span><span>u</span></div>
     <h1>Nacho Lee</h1>
-    <p>Mis primeras 7 lecciones, con voz, juegos y premios.</p>
+    <p>Las 26 lecciones del Nacho, con voz, juegos y premios.</p>
     <button class="arranca" id="arranca" type="button">▶ ¡Empezar!</button>
   </div>
 </div>
@@ -331,9 +331,10 @@
       return vv ? (vv.l + ", de " + vv.w) : resto;
     }
     if(tipo === "L"){
-      var LL = null;
-      LECCIONES.forEach(function(L){ if(L.letra === resto) LL = L; });
-      return LL ? (LL.letra + ". " + LL.silabas.join(", ")) : resto;
+      // resto viene como "11:c": el número desambigua letras repetidas
+      var corte2 = resto.indexOf(":"), num = resto.slice(0, corte2), LL = null;
+      LECCIONES.forEach(function(L){ if(String(L.n) === num) LL = L; });
+      return LL ? (LL.letra + ". " + LL.silabas.join(", ")) : resto.slice(corte2 + 1);
     }
     if(tipo === "p"){
       var pp = null;
@@ -672,7 +673,7 @@
       var g = el("button","letrota"); g.type = "button";
       g.textContent = L.letra + " " + L.letra.toUpperCase();
       g.setAttribute("aria-label","Escuchar la letra " + L.letra);
-      g.addEventListener("click", function(){ RUIDOS.pop(); brinca(g); hablar("L:" + L.letra); });
+      g.addEventListener("click", function(){ RUIDOS.pop(); brinca(g); hablar("L:" + L.n + ":" + L.letra); });
       t.appendChild(g);
 
       /* Formador: enseña CÓMO nace la sílaba (m + a = ma). Es el corazón del
@@ -714,7 +715,7 @@
     todas.style.marginTop = "22px";
     todas.addEventListener("click", function(){
       RUIDOS.toque();
-      if(L.silabas) hablar("L:" + L.letra); else hablar("f:a, e, i, o, u");
+      if(L.silabas) hablar("L:" + L.n + ":" + L.letra); else hablar("f:a, e, i, o, u");
     });
     t.appendChild(todas);
 

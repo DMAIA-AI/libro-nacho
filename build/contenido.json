@@ -99,6 +99,27 @@
     },
     {
       "n": 4,
+      "titulo": "La s de sapo",
+      "letra": "s",
+      "color": "#FFC61A",
+      "trofeo": "🐸",
+      "juego": "escucha",
+      "silabas": ["sa", "si", "su", "se", "so"],
+      "palabras": [
+        {"w": "sapo", "e": "🐸", "s": "sa-po"},
+        {"w": "sopa", "e": "🍲", "s": "so-pa"},
+        {"w": "suma", "e": "➕", "s": "su-ma"},
+        {"w": "oso", "e": "🐻", "s": "o-so"}
+      ],
+      "frases": ["Mi oso se asoma.", "Esa mesa sí pesa.", "Mamá puso mi sopa."],
+      "adivinanzas": [
+        {"texto": "Salto, soy verde y vivo en el agua. Empiezo con sa. ¿Quién soy?", "resp": "🐸", "opciones": ["🐸", "🍲", "🐻"]},
+        {"texto": "Me tomas caliente en un plato hondo. Empiezo con so. ¿Qué soy?", "resp": "🍲", "opciones": ["🍲", "➕", "🐸"]},
+        {"texto": "Junto los números y me haces en el cuaderno. Empiezo con su. ¿Qué soy?", "resp": "➕", "opciones": ["➕", "🐻", "🍲"]}
+      ]
+    },
+    {
+      "n": 5,
       "titulo": "La l de loma",
       "letra": "l",
       "color": "#38A85C",
@@ -119,7 +140,7 @@
       ]
     },
     {
-      "n": 5,
+      "n": 6,
       "titulo": "La n de nene",
       "letra": "n",
       "color": "#8A5CF0",
@@ -140,7 +161,7 @@
       ]
     },
     {
-      "n": 6,
+      "n": 7,
       "titulo": "La t de tomate",
       "letra": "t",
       "color": "#FFC61A",
@@ -161,7 +182,7 @@
       ]
     },
     {
-      "n": 7,
+      "n": 8,
       "titulo": "La d de dedo",
       "letra": "d",
       "color": "#FF3F87",
@@ -179,6 +200,384 @@
         {"texto": "Tengo seis caras con puntos y sirvo para jugar. Empiezo con da. ¿Qué soy?", "resp": "🎲", "opciones": ["🎲", "🪙", "🍬"]},
         {"texto": "Soy redonda, dorada y sirvo para comprar. ¿Qué soy?", "resp": "🪙", "opciones": ["🪙", "☝️", "🎲"]},
         {"texto": "Soy dulce, sabroso y empiezo con du. ¿Qué soy?", "resp": "🍬", "opciones": ["🍬", "🎲", "🪙"]}
+      ]
+    },
+    {
+      "n": 9,
+      "titulo": "La r de rosa",
+      "letra": "r",
+      "color": "#38A85C",
+      "trofeo": "🌹",
+      "juego": "burbujas",
+      "silabas": ["ra", "re", "ri", "ro", "ru"],
+      "palabras": [
+        {"w": "rosa", "e": "🌹", "s": "ro-sa"},
+        {"w": "toro", "e": "🐂", "s": "to-ro"},
+        {"w": "loro", "e": "🦜", "s": "lo-ro"},
+        {"w": "pera", "e": "🍐", "s": "pe-ra"}
+      ],
+      "frases": ["Ese toro me mira.", "Dame una pera madura.", "Me da risa esa rana."],
+      "adivinanzas": [
+        {"texto": "Soy una flor roja con espinas. Empiezo con ro. ¿Qué soy?", "resp": "🌹", "opciones": ["🌹", "🐂", "🍐"]},
+        {"texto": "Soy verde, hablo y repito lo que dices. Termino en ro. ¿Quién soy?", "resp": "🦜", "opciones": ["🦜", "🌹", "🐂"]},
+        {"texto": "Tengo cuernos y vivo en el campo. Empiezo con to. ¿Quién soy?", "resp": "🐂", "opciones": ["🐂", "🍐", "🦜"]}
+      ]
+    },
+    {
+      "n": 10,
+      "titulo": "La rr de perro",
+      "letra": "rr",
+      "color": "#8A5CF0",
+      "trofeo": "🐕",
+      "juego": "imagen",
+      "silabas": ["rra", "rre", "rri", "rro", "rru"],
+      "palabras": [
+        {"w": "perro", "e": "🐕", "s": "pe-rro"},
+        {"w": "carro", "e": "🚗", "s": "ca-rro"},
+        {"w": "torre", "e": "🗼", "s": "to-rre"},
+        {"w": "burro", "e": "🫏", "s": "bu-rro"}
+      ],
+      "frases": ["Ese perro sale de su perrera.", "Mi carro corre rápido.", "La mula tira de la carreta."],
+      "adivinanzas": [
+        {"texto": "Ladro y muevo la cola. Termino en rro. ¿Quién soy?", "resp": "🐕", "opciones": ["🐕", "🚗", "🗼"]},
+        {"texto": "Soy muy alta y se me ve de lejos. Termino en rre. ¿Qué soy?", "resp": "🗼", "opciones": ["🗼", "🫏", "🐕"]},
+        {"texto": "Tengo cuatro ruedas y me manejas. Termino en rro. ¿Qué soy?", "resp": "🚗", "opciones": ["🚗", "🗼", "🫏"]}
+      ]
+    },
+    {
+      "n": 11,
+      "titulo": "La c de casa",
+      "letra": "c",
+      "color": "#FF8A24",
+      "trofeo": "🏠",
+      "juego": "arma",
+      "silabas": ["ca", "co", "cu"],
+      "palabras": [
+        {"w": "casa", "e": "🏠", "s": "ca-sa"},
+        {"w": "cono", "e": "🍦", "s": "co-no"},
+        {"w": "corona", "e": "👑", "s": "co-ro-na"},
+        {"w": "cuna", "e": "🛏️", "s": "cu-na"}
+      ],
+      "frases": ["Cose mi camisa rota.", "Tu perro corre a mi lado.", "Dame ese caramelo de coco."],
+      "adivinanzas": [
+        {"texto": "Tú vives dentro de mí. Empiezo con ca. ¿Qué soy?", "resp": "🏠", "opciones": ["🏠", "🍦", "👑"]},
+        {"texto": "Soy frío, dulce y me lames. Empiezo con co. ¿Qué soy?", "resp": "🍦", "opciones": ["🍦", "🛏️", "🏠"]},
+        {"texto": "Voy en la cabeza del rey. Empiezo con co. ¿Qué soy?", "resp": "👑", "opciones": ["👑", "🏠", "🍦"]}
+      ]
+    },
+    {
+      "n": 12,
+      "titulo": "La ñ de niña",
+      "letra": "ñ",
+      "color": "#FF3F87",
+      "trofeo": "🍍",
+      "juego": "escucha",
+      "silabas": ["ña", "ñi", "ñu", "ñe", "ño"],
+      "palabras": [
+        {"w": "niña", "e": "👧", "s": "ni-ña"},
+        {"w": "piña", "e": "🍍", "s": "pi-ña"},
+        {"w": "uña", "e": "💅", "s": "u-ña"},
+        {"w": "muñeca", "e": "🪆", "s": "mu-ñe-ca"}
+      ],
+      "frases": ["Mañana comeré piña.", "La niña adora a su muñeca.", "No dañe mi moño de seda."],
+      "adivinanzas": [
+        {"texto": "Soy una fruta dulce con corona y termino en ña. ¿Qué soy?", "resp": "🍍", "opciones": ["🍍", "👧", "💅"]},
+        {"texto": "Estoy en la punta de tu dedo. Termino en ña. ¿Qué soy?", "resp": "💅", "opciones": ["💅", "🪆", "🍍"]},
+        {"texto": "Soy un juguete que la niña abraza. Tengo ñe. ¿Qué soy?", "resp": "🪆", "opciones": ["🪆", "🍍", "👧"]}
+      ]
+    },
+    {
+      "n": 13,
+      "titulo": "La v de vaca",
+      "letra": "v",
+      "color": "#12B3C4",
+      "trofeo": "🐄",
+      "juego": "burbujas",
+      "silabas": ["va", "vu", "ve", "vo", "vi"],
+      "palabras": [
+        {"w": "vaca", "e": "🐄", "s": "va-ca"},
+        {"w": "vela", "e": "🕯️", "s": "ve-la"},
+        {"w": "vaso", "e": "🥤", "s": "va-so"},
+        {"w": "uva", "e": "🍇", "s": "u-va"}
+      ],
+      "frases": ["La vela ilumina la sala.", "Mi mamá lava la ropa.", "La señorita visita mi casa."],
+      "adivinanzas": [
+        {"texto": "Doy leche y hago muu. Empiezo con va. ¿Quién soy?", "resp": "🐄", "opciones": ["🐄", "🕯️", "🥤"]},
+        {"texto": "Me prendes y doy luz. Empiezo con ve. ¿Qué soy?", "resp": "🕯️", "opciones": ["🕯️", "🍇", "🐄"]},
+        {"texto": "Me llenas de agua para beber. Empiezo con va. ¿Qué soy?", "resp": "🥤", "opciones": ["🥤", "🐄", "🕯️"]}
+      ]
+    },
+    {
+      "n": 14,
+      "titulo": "La b de burro",
+      "letra": "b",
+      "color": "#FFC61A",
+      "trofeo": "🫏",
+      "juego": "arma",
+      "silabas": ["bu", "bo", "be", "bi", "ba"],
+      "palabras": [
+        {"w": "burro", "e": "🫏", "s": "bu-rro"},
+        {"w": "bota", "e": "👢", "s": "bo-ta"},
+        {"w": "boca", "e": "👄", "s": "bo-ca"},
+        {"w": "nube", "e": "☁️", "s": "nu-be"}
+      ],
+      "frases": ["Mi burro no sabe nada.", "Ese lobo dañó mi bata.", "Sube, sube a esa nube."],
+      "adivinanzas": [
+        {"texto": "Comes y hablas conmigo. Empiezo con bo. ¿Qué soy?", "resp": "👄", "opciones": ["👄", "👢", "☁️"]},
+        {"texto": "Me pongo en el pie cuando llueve. Empiezo con bo. ¿Qué soy?", "resp": "👢", "opciones": ["👢", "🫏", "👄"]},
+        {"texto": "Soy blanca, estoy en el cielo y termino en be. ¿Qué soy?", "resp": "☁️", "opciones": ["☁️", "👄", "👢"]}
+      ]
+    },
+    {
+      "n": 15,
+      "titulo": "La g de gato",
+      "letra": "g",
+      "color": "#38A85C",
+      "trofeo": "🐈",
+      "juego": "imagen",
+      "silabas": ["ga", "go", "gu"],
+      "palabras": [
+        {"w": "gato", "e": "🐈", "s": "ga-to"},
+        {"w": "gusano", "e": "🐛", "s": "gu-sa-no"},
+        {"w": "lago", "e": "🏞️", "s": "la-go"},
+        {"w": "regalo", "e": "🎁", "s": "re-ga-lo"}
+      ],
+      "frases": ["Esa goma sí pega.", "Papá es un mago.", "Sube, agarra esa soga."],
+      "adivinanzas": [
+        {"texto": "Hago miau y cazo ratones. Empiezo con ga. ¿Quién soy?", "resp": "🐈", "opciones": ["🐈", "🐛", "🎁"]},
+        {"texto": "Soy largo, blando y me arrastro. Empiezo con gu. ¿Quién soy?", "resp": "🐛", "opciones": ["🐛", "🏞️", "🐈"]},
+        {"texto": "Vengo con lazo y traigo una sorpresa. Tengo ga. ¿Qué soy?", "resp": "🎁", "opciones": ["🎁", "🐈", "🐛"]}
+      ]
+    },
+    {
+      "n": 16,
+      "titulo": "La y de yate",
+      "letra": "y",
+      "color": "#8A5CF0",
+      "trofeo": "🤡",
+      "juego": "escucha",
+      "silabas": ["ya", "yi", "yo", "yu", "ye"],
+      "palabras": [
+        {"w": "yate", "e": "🛥️", "s": "ya-te"},
+        {"w": "yema", "e": "🥚", "s": "ye-ma"},
+        {"w": "payaso", "e": "🤡", "s": "pa-ya-so"},
+        {"w": "rayo", "e": "⚡", "s": "ra-yo"}
+      ],
+      "frases": ["Ya cayó ese rayo.", "Yo me como la yema.", "Ese yate va a la laguna."],
+      "adivinanzas": [
+        {"texto": "Hago reír en el circo y tengo la nariz roja. Tengo ya. ¿Quién soy?", "resp": "🤡", "opciones": ["🤡", "🥚", "⚡"]},
+        {"texto": "Soy la parte amarilla del huevo. Empiezo con ye. ¿Qué soy?", "resp": "🥚", "opciones": ["🥚", "🛥️", "🤡"]},
+        {"texto": "Salgo en la tormenta y hago mucha luz. Termino en yo. ¿Qué soy?", "resp": "⚡", "opciones": ["⚡", "🤡", "🥚"]}
+      ]
+    },
+    {
+      "n": 17,
+      "titulo": "La f de foca",
+      "letra": "f",
+      "color": "#FF3F87",
+      "trofeo": "🦭",
+      "juego": "burbujas",
+      "silabas": ["fa", "fi", "fe", "fu", "fo"],
+      "palabras": [
+        {"w": "foca", "e": "🦭", "s": "fo-ca"},
+        {"w": "foto", "e": "📷", "s": "fo-to"},
+        {"w": "sofá", "e": "🛋️", "s": "so-fá"},
+        {"w": "café", "e": "☕", "s": "ca-fé"}
+      ],
+      "frases": ["Mira la foca del faro.", "Ese sofá se ve bonito.", "Apaga ya ese foco."],
+      "adivinanzas": [
+        {"texto": "Nado en el mar, aplaudo y empiezo con fo. ¿Quién soy?", "resp": "🦭", "opciones": ["🦭", "📷", "🛋️"]},
+        {"texto": "Guardo un recuerdo y empiezo con fo. ¿Qué soy?", "resp": "📷", "opciones": ["📷", "☕", "🦭"]},
+        {"texto": "Me siento en ti para descansar. Termino en fá. ¿Qué soy?", "resp": "🛋️", "opciones": ["🛋️", "🦭", "📷"]}
+      ]
+    },
+    {
+      "n": 18,
+      "titulo": "La h de hilo",
+      "letra": "h",
+      "color": "#FF8A24",
+      "trofeo": "🧵",
+      "juego": "arma",
+      "silabas": ["hi", "ha", "hu", "ho", "he"],
+      "palabras": [
+        {"w": "hilo", "e": "🧵", "s": "hi-lo"},
+        {"w": "hada", "e": "🧚", "s": "ha-da"},
+        {"w": "humo", "e": "💨", "s": "hu-mo"},
+        {"w": "helado", "e": "🍧", "s": "he-la-do"}
+      ],
+      "frases": ["Ese helado sabe rico.", "Ahorra dinero ahora.", "La hache no suena, pero se escribe."],
+      "adivinanzas": [
+        {"texto": "Coso contigo y soy largo y delgado. Empiezo con hi. ¿Qué soy?", "resp": "🧵", "opciones": ["🧵", "🧚", "🍧"]},
+        {"texto": "Soy frío, dulce y me derrito. Empiezo con he. ¿Qué soy?", "resp": "🍧", "opciones": ["🍧", "💨", "🧵"]},
+        {"texto": "Tengo varita y alas y empiezo con ha. ¿Quién soy?", "resp": "🧚", "opciones": ["🧚", "🍧", "💨"]}
+      ]
+    },
+    {
+      "n": 19,
+      "titulo": "La j de joya",
+      "letra": "j",
+      "color": "#12B3C4",
+      "trofeo": "🦒",
+      "juego": "imagen",
+      "silabas": ["ja", "ju", "ji", "jo", "je"],
+      "palabras": [
+        {"w": "jugo", "e": "🧃", "s": "ju-go"},
+        {"w": "jirafa", "e": "🦒", "s": "ji-ra-fa"},
+        {"w": "ojo", "e": "👁️", "s": "o-jo"},
+        {"w": "oveja", "e": "🐑", "s": "o-ve-ja"}
+      ],
+      "frases": ["Esa niña dibuja una jirafa.", "Bebe jugo de piña.", "Oveja, dame tu lana."],
+      "adivinanzas": [
+        {"texto": "Tengo el cuello muy largo y empiezo con ji. ¿Quién soy?", "resp": "🦒", "opciones": ["🦒", "🧃", "👁️"]},
+        {"texto": "Me tomas frío y soy de fruta. Empiezo con ju. ¿Qué soy?", "resp": "🧃", "opciones": ["🧃", "🐑", "🦒"]},
+        {"texto": "Con nosotros ves y somos dos. Termino en jo. ¿Qué soy?", "resp": "👁️", "opciones": ["👁️", "🦒", "🧃"]}
+      ]
+    },
+    {
+      "n": 20,
+      "titulo": "La z de zorra",
+      "letra": "z",
+      "color": "#FFC61A",
+      "trofeo": "🦊",
+      "juego": "escucha",
+      "silabas": ["za", "zo", "zu"],
+      "palabras": [
+        {"w": "zorra", "e": "🦊", "s": "zo-rra"},
+        {"w": "zapato", "e": "👞", "s": "za-pa-to"},
+        {"w": "taza", "e": "☕", "s": "ta-za"},
+        {"w": "buzo", "e": "🤿", "s": "bu-zo"}
+      ],
+      "frases": ["La zorra le teme al cazador.", "Dame tu taza de loza.", "Mi pozo se ha secado."],
+      "adivinanzas": [
+        {"texto": "Soy naranja, astuta y empiezo con zo. ¿Quién soy?", "resp": "🦊", "opciones": ["🦊", "👞", "☕"]},
+        {"texto": "Me pongo en el pie para salir. Empiezo con za. ¿Qué soy?", "resp": "👞", "opciones": ["👞", "🤿", "🦊"]},
+        {"texto": "Tomas café en mí. Termino en za. ¿Qué soy?", "resp": "☕", "opciones": ["☕", "🦊", "👞"]}
+      ]
+    },
+    {
+      "n": 21,
+      "titulo": "La ll de llave",
+      "letra": "ll",
+      "color": "#38A85C",
+      "trofeo": "🔑",
+      "juego": "burbujas",
+      "silabas": ["lla", "llu", "lli", "lle", "llo"],
+      "palabras": [
+        {"w": "llave", "e": "🔑", "s": "lla-ve"},
+        {"w": "silla", "e": "🪑", "s": "si-lla"},
+        {"w": "gallina", "e": "🐔", "s": "ga-lli-na"},
+        {"w": "ballena", "e": "🐋", "s": "ba-lle-na"}
+      ],
+      "frases": ["Lleva la silla a la sala.", "Oye la bulla de la calle.", "La zorra caza mi gallo."],
+      "adivinanzas": [
+        {"texto": "Abro la puerta y empiezo con lla. ¿Qué soy?", "resp": "🔑", "opciones": ["🔑", "🪑", "🐔"]},
+        {"texto": "Pongo huevos y hago clo clo. Tengo lli. ¿Quién soy?", "resp": "🐔", "opciones": ["🐔", "🐋", "🔑"]},
+        {"texto": "Soy el animal más grande del mar. Tengo lle. ¿Quién soy?", "resp": "🐋", "opciones": ["🐋", "🔑", "🪑"]}
+      ]
+    },
+    {
+      "n": 22,
+      "titulo": "La g de guitarra",
+      "letra": "gu",
+      "color": "#8A5CF0",
+      "trofeo": "🎸",
+      "juego": "arma",
+      "silabas": ["gue", "gui"],
+      "palabras": [
+        {"w": "guitarra", "e": "🎸", "s": "gui-ta-rra"},
+        {"w": "águila", "e": "🦅", "s": "á-gui-la"},
+        {"w": "juguete", "e": "🧸", "s": "ju-gue-te"},
+        {"w": "guiño", "e": "😉", "s": "gui-ño"}
+      ],
+      "frases": ["Lleva tu guitarra a mi casa.", "Esa águila cazó a mi conejo.", "Me gusta tu guiso."],
+      "adivinanzas": [
+        {"texto": "Tengo cuerdas y hago música. Empiezo con gui. ¿Qué soy?", "resp": "🎸", "opciones": ["🎸", "🦅", "🧸"]},
+        {"texto": "Vuelo alto y soy un ave muy grande. Tengo gui. ¿Quién soy?", "resp": "🦅", "opciones": ["🦅", "😉", "🎸"]},
+        {"texto": "Los niños juegan conmigo. Tengo gue. ¿Qué soy?", "resp": "🧸", "opciones": ["🧸", "🎸", "🦅"]}
+      ]
+    },
+    {
+      "n": 23,
+      "titulo": "La c de cepillo",
+      "letra": "c",
+      "color": "#FF3F87",
+      "trofeo": "🍒",
+      "juego": "imagen",
+      "silabas": ["ce", "ci"],
+      "palabras": [
+        {"w": "cepillo", "e": "🪥", "s": "ce-pi-llo"},
+        {"w": "cebolla", "e": "🧅", "s": "ce-bo-lla"},
+        {"w": "cine", "e": "🎬", "s": "ci-ne"},
+        {"w": "cereza", "e": "🍒", "s": "ce-re-za"}
+      ],
+      "frases": ["Doce niños van al cine.", "La cebolla no hace daño.", "Cocinero, dame la cena."],
+      "adivinanzas": [
+        {"texto": "Hago llorar cuando me cortan. Empiezo con ce. ¿Qué soy?", "resp": "🧅", "opciones": ["🧅", "🪥", "🍒"]},
+        {"texto": "Ves películas en mí. Empiezo con ci. ¿Qué soy?", "resp": "🎬", "opciones": ["🎬", "🍒", "🧅"]},
+        {"texto": "Soy roja, chiquita y vengo de dos en dos. Empiezo con ce. ¿Qué soy?", "resp": "🍒", "opciones": ["🍒", "🧅", "🪥"]}
+      ]
+    },
+    {
+      "n": 24,
+      "titulo": "La ch de choza",
+      "letra": "ch",
+      "color": "#FF8A24",
+      "trofeo": "🍫",
+      "juego": "escucha",
+      "silabas": ["cha", "che", "chi", "cho", "chu"],
+      "palabras": [
+        {"w": "chivo", "e": "🐐", "s": "chi-vo"},
+        {"w": "chocolate", "e": "🍫", "s": "cho-co-la-te"},
+        {"w": "leche", "e": "🥛", "s": "le-che"},
+        {"w": "lechuza", "e": "🦉", "s": "le-chu-za"}
+      ],
+      "frases": ["La chiva da leche.", "Una lechuza chilla de noche.", "Chinito come lechuga."],
+      "adivinanzas": [
+        {"texto": "Soy dulce, marrón y me derrito. Empiezo con cho. ¿Qué soy?", "resp": "🍫", "opciones": ["🍫", "🐐", "🦉"]},
+        {"texto": "Vuelo de noche y digo uh uh. Tengo chu. ¿Quién soy?", "resp": "🦉", "opciones": ["🦉", "🥛", "🍫"]},
+        {"texto": "Hago mee y tengo cuernos. Empiezo con chi. ¿Quién soy?", "resp": "🐐", "opciones": ["🐐", "🍫", "🥛"]}
+      ]
+    },
+    {
+      "n": 25,
+      "titulo": "La q de queso",
+      "letra": "qu",
+      "color": "#12B3C4",
+      "trofeo": "🧀",
+      "juego": "burbujas",
+      "silabas": ["que", "qui"],
+      "palabras": [
+        {"w": "queso", "e": "🧀", "s": "que-so"},
+        {"w": "raqueta", "e": "🎾", "s": "ra-que-ta"},
+        {"w": "chaqueta", "e": "🧥", "s": "cha-que-ta"},
+        {"w": "buque", "e": "🚢", "s": "bu-que"}
+      ],
+      "frases": ["Si me das queso no me quejo.", "Ese buque navega a toda máquina.", "Toma mi chaqueta de lana."],
+      "adivinanzas": [
+        {"texto": "Soy amarillo, vengo de la leche y empiezo con que. ¿Qué soy?", "resp": "🧀", "opciones": ["🧀", "🎾", "🧥"]},
+        {"texto": "Navego en el mar y soy muy grande. Termino en que. ¿Qué soy?", "resp": "🚢", "opciones": ["🚢", "🧀", "🎾"]},
+        {"texto": "Me pongo encima cuando hace frío. Tengo que. ¿Qué soy?", "resp": "🧥", "opciones": ["🧥", "🚢", "🧀"]}
+      ]
+    },
+    {
+      "n": 26,
+      "titulo": "La g de gema",
+      "letra": "g",
+      "color": "#FFC61A",
+      "trofeo": "💎",
+      "juego": "arma",
+      "silabas": ["ge", "gi"],
+      "palabras": [
+        {"w": "gema", "e": "💎", "s": "ge-ma"},
+        {"w": "girasol", "e": "🌻", "s": "gi-ra-sol"},
+        {"w": "página", "e": "📄", "s": "pá-gi-na"},
+        {"w": "gemelos", "e": "👯", "s": "ge-me-los"}
+      ],
+      "frases": ["Joyero, coloca la gema a mi anillo.", "No pase la página ligero.", "La hélice gira rápido."],
+      "adivinanzas": [
+        {"texto": "Brillo mucho y voy en el anillo. Empiezo con ge. ¿Qué soy?", "resp": "💎", "opciones": ["💎", "🌻", "📄"]},
+        {"texto": "Soy una flor amarilla que mira al sol. Empiezo con gi. ¿Qué soy?", "resp": "🌻", "opciones": ["🌻", "👯", "💎"]},
+        {"texto": "Me pasas cuando lees un libro. Tengo gi. ¿Qué soy?", "resp": "📄", "opciones": ["📄", "💎", "🌻"]}
       ]
     }
   ]

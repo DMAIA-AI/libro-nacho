@@ -12,6 +12,7 @@ Run:  python build/build.py
 
 import asyncio
 import base64
+import hashlib
 import json
 import os
 import re
@@ -47,7 +48,9 @@ def recolectar(contenido):
                 clips["v:" + v["l"]] = "%s... %s, de %s." % (v["l"], v["l"], v["w"])
                 clips["s:" + v["l"]] = v["l"]
         if L.get("silabas"):
-            clips["L:" + L["letra"]] = "%s... %s." % (
+            # la clave lleva el número de lección porque una misma letra aparece en
+            # dos lecciones distintas (c de casa / c de cielo, g de gato / g de gema)
+            clips["L:%s:%s" % (L["n"], L["letra"])] = "%s... %s." % (
                 L["letra"],
                 ", ".join(L["silabas"]),
             )
@@ -72,8 +75,15 @@ def recolectar(contenido):
 
 
 def nombre_archivo(clave, i):
+    """Nombre estable: depende solo de la clave, nunca de su posición.
+
+    Antes iba numerado por el índice del set ordenado, así que agregar una
+    lección renombraba todos los clips y obligaba a re-sintetizar el catálogo
+    entero. Con la firma de la clave, un clip ya grabado conserva su archivo.
+    """
     limpio = re.sub(r"[^a-z0-9]+", "-", clave.lower())[:34].strip("-")
-    return "%03d-%s.mp3" % (i, limpio or "clip")
+    firma = hashlib.md5(clave.encode("utf-8")).hexdigest()[:6]
+    return "%s-%s.mp3" % (firma, limpio or "clip")
 
 
 async def sintetizar(texto, destino, voz, velocidad):
@@ -135,11 +145,20 @@ def main():
     with open(os.path.join(AUDIO, "manifiesto.json"), "w", encoding="utf-8") as f:
         json.dump(manifiesto, f, ensure_ascii=False, indent=1)
 
-    for nombre, inline in (("index.html", False), ("app-una-sola.html", True)):
+    # Con las 26 lecciones el build de un solo archivo pasa de 15 MB, que es
+    # demasiado para versionarlo en cada commit. Se genera solo si se pide.
+    salidas = [("index.html", False)]
+    if "--una-sola" in sys.argv:
+        salidas.append(("app-una-sola.html", True))
+
+    for nombre, inline in salidas:
         html = render(contenido, manifiesto, inline)
         with open(os.path.join(RAIZ, nombre), "w", encoding="utf-8") as f:
             f.write(html)
         print("%s -> %.2f MB" % (nombre, len(html.encode("utf-8")) / 1048576))
+
+    if "--una-sola" not in sys.argv:
+        print("app-una-sola.html no regenerado (usa --una-sola para el archivo offline)")
 
 
 if __name__ == "__main__":
