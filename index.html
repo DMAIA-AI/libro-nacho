@@ -251,7 +251,7 @@
   <div class="caja">
     <div class="letras"><span>a</span><span>e</span><span>i</span><span>o</span><span>u</span></div>
     <h1>Nacho Lee</h1>
-    <p>Las 26 lecciones del Nacho, con voz, juegos y premios.</p>
+    <p id="subtitulo">Con voz, juegos y premios.</p>
     <button class="arranca" id="arranca" type="button">▶ ¡Empezar!</button>
   </div>
 </div>
@@ -1193,6 +1193,10 @@
   document.addEventListener("pointerdown", desbloquear, {once:true});
 
   document.documentElement.style.setProperty("--acento", LECCIONES[0].color);
+  // el subtítulo se arma con el conteo real: escrito a mano se quedó viejo dos
+  // veces seguidas al crecer el libro
+  document.getElementById("subtitulo").textContent =
+    "Las " + LECCIONES.length + " lecciones del Nacho, con voz, juegos y premios.";
   pintarMenu();
   dibujar();
 })();
